@@ -2,14 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: true,
-  async redirects() {
-    return [
-      { source: "/download-video-from-url", destination: "/", permanent: true },
-      { source: "/download-video-from-url/", destination: "/", permanent: true },
-      { source: "/video-downloader", destination: "/", permanent: true },
-      { source: "/video-downloader/", destination: "/", permanent: true },
-    ];
-  },
+  skipTrailingSlashRedirect: true,
   async headers() {
     return [
       {
