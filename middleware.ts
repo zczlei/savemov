@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const TO_HOME = new Set([
+const GONE = new Set([
   "/download-video-from-url",
   "/download-video-from-url/",
   "/video-downloader",
@@ -11,10 +11,15 @@ const TO_HOME = new Set([
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (TO_HOME.has(pathname)) {
-    const url = request.nextUrl.clone();
-    url.pathname = "/";
-    return NextResponse.redirect(url, 308);
+  if (GONE.has(pathname)) {
+    return new NextResponse("This page does not exist.", {
+      status: 410,
+      headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "x-robots-tag": "noindex",
+        "cache-control": "no-store",
+      },
+    });
   }
 
   if (pathname.length > 1 && !pathname.endsWith("/") && !pathname.startsWith("/api/") && !pathname.includes(".")) {
