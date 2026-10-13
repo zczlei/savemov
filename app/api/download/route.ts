@@ -1,8 +1,6 @@
 import { DOWNLOAD_API } from "@/lib/site";
 import { decodeDownloadUrl, sanitizeVideoUrl } from "@/lib/download";
 
-export const runtime = "edge";
-
 type Upstream = {
   status?: string;
   url?: string;

@@ -68,7 +68,7 @@ export default function HomePage({ c }: { c: Copy }) {
 
       <main id="main" lang={c.lang}>
         <section className="mx-auto -mt-8 grid max-w-5xl grid-cols-2 gap-3 px-4 sm:grid-cols-4">
-          {trust.map((item) => (
+          {(c.badges ?? trust).map((item) => (
             <div key={item} className="rounded-2xl border border-line bg-white px-4 py-3 text-center text-sm font-semibold text-pine shadow-sm">
               {item}
             </div>
@@ -77,6 +77,7 @@ export default function HomePage({ c }: { c: Copy }) {
 
         <section className="mx-auto max-w-5xl px-4 py-14">
           <h2 className="text-2xl font-bold tracking-tight">{c.how.h2}</h2>
+          {c.how.intro ? <p className="mt-4 max-w-3xl text-sm leading-7 text-ink/70">{c.how.intro}</p> : null}
           <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {c.how.steps.map((step, index) => (
               <li key={step.t} className="rounded-3xl border border-line bg-white p-5">
@@ -87,6 +88,17 @@ export default function HomePage({ c }: { c: Copy }) {
             ))}
           </ol>
         </section>
+
+        {c.format ? (
+          <section aria-labelledby="format" className="border-t border-line/80">
+            <div className="mx-auto max-w-5xl px-4 py-14">
+              <h2 id="format" className="text-2xl font-bold tracking-tight">
+                {c.format.h2}
+              </h2>
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-ink/70">{c.format.body}</p>
+            </div>
+          </section>
+        ) : null}
 
         <section className="border-t border-line/80">
           <div className="mx-auto grid max-w-5xl gap-8 px-4 py-14 md:grid-cols-2">
@@ -112,6 +124,7 @@ export default function HomePage({ c }: { c: Copy }) {
                 >
                   <span className="text-ink/40">↗ </span>
                   <span className="group-hover:text-pine">{platform.anchor}</span>
+                  {platform.note ? <span className="mt-1 block font-normal leading-6 text-ink/60">{platform.note}</span> : null}
                 </Link>
               ))}
             </div>

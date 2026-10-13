@@ -31,14 +31,16 @@ export type Copy = {
   platformLead: string;
   platformTail: string;
   form: FormCopy;
-  how: { h2: string; steps: { t: string; d: string }[] };
+  how: { h2: string; intro?: string; steps: { t: string; d: string }[] };
+  format?: { h2: string; body: string };
   what: { h2: string; body: string; limits: string; emphasis?: string };
   useCases: { h2: string; items: { t: string; d: string }[] };
   data: { h2: string; body: string };
   faqH2: string;
   faqs: { q: string; a: string }[];
+  badges?: string[];
   platformsH2: string;
-  platforms: { slug: string; label: string; anchor: string }[];
+  platforms: { slug: string; label: string; anchor: string; note?: string }[];
   footerNote: string;
   legal: { terms: string; privacy: string; copyright: string; contact: string };
   skip: string;
@@ -93,12 +95,19 @@ export const EN: Copy = {
   },
   how: {
     h2: "How to download a video from a link",
+    intro:
+      "To download video from link pages such as TikTok, Instagram or Telegram, paste the share link in the box above — Savemov reads the page and prepares the file.",
     steps: [
       { t: "Copy the link", d: "Open the public video in your browser and copy its URL – or use Share → Copy link in the app." },
       { t: "Paste it above", d: "Savemov reads the page and locates the video file that page is streaming." },
       { t: "We fetch the file", d: "Savemov returns the MP4 the page is already playing, at the quality that page published." },
       { t: "Save the file", d: "One tap and it's on your device. Savemov does not keep a copy, so save it right away." },
     ],
+  },
+  format: {
+    h2: "Video formats and quality",
+    body:
+      "Savemov keeps the container the source page already serves: usually an MP4 video file, which plays on iPhone, Android, Windows and Mac without extra codecs. Quality follows the original upload. The downloader does not invent a higher resolution, so a file that looks soft here was soft where it was posted. The file link comes back as soon as the request finishes — save it to your device, because Savemov does not keep a copy and the source link can expire.",
   },
   what: {
     h2: "What this tool does",
@@ -129,7 +138,7 @@ export const EN: Copy = {
     },
     {
       q: "Can I paste any kind of link?",
-      a: "Yes: the page URL of a public video, a share link, or a link you received in a messaging app such as Telegram. If the link opens the video in your browser without a login, we can usually save it. A link that already points straight at an .mp4 file just plays in the browser – use your device's own save option for that one.",
+      a: "Yes: the page URL of a public video, a share link, or a link you received in a messaging app such as Telegram. If the link opens the video in your browser without a login, we can usually save it. A link that already points straight at an .mp4 file just plays in the browser – use your device's own save option for that one. Any public address works: use the video URL downloader to fetch the file behind the page instead of screen-recording it.",
     },
     {
       q: "Which sites are supported?",
@@ -164,14 +173,15 @@ export const EN: Copy = {
       a: "No. WhatsApp Status has no public link a website can read, so no online downloader – including this one – can save it. Anything that does give you a public link (TikTok, Instagram, Facebook, Telegram, Pinterest) works above.",
     },
   ],
+  badges: ["MP4", "Source quality", "No sign-up", "iPhone & Android"],
   platformsH2: "Video downloaders by platform",
   platforms: [
-    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader" },
-    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader" },
-    { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader" },
-    { slug: SLUG.fb, label: "Facebook", anchor: "Facebook Video Downloader" },
-    { slug: SLUG.tg, label: "Telegram", anchor: "Telegram Video Downloader" },
-    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader" },
+    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader", note: "Save video pins from any public board." },
+    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader", note: "Paste the share link to keep the video file." },
+    { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader", note: "Reels and video posts from public profiles." },
+    { slug: SLUG.fb, label: "Facebook", anchor: "Facebook Video Downloader", note: "Public videos and Reels from pages and groups you can open." },
+    { slug: SLUG.tg, label: "Telegram", anchor: "Telegram Video Downloader", note: "Videos from public channels and t.me links." },
+    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader", note: "Spotlight clips from a shared link." },
     { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
     { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
     { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru Video Downloader" },
@@ -454,7 +464,7 @@ export function buildMetadata(c: Copy): Metadata {
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: c.h1 }],
     },
     twitter: { card: "summary_large_image", title: c.title, description: c.desc, images: ["/opengraph-image"] },
-    robots: { index: true, follow: true, maxSnippet: -1, maxImagePreview: "large" },
+    robots: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" },
   };
 }
 
