@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import DownloaderForm from "@/components/downloader-form";
 import JsonLd from "@/components/json-ld";
-import { SiteFooter, SiteHeader } from "@/components/site-chrome";
+import { Breadcrumb, SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { PT, type FormCopy } from "@/lib/copy";
 import { SITE } from "@/lib/site";
 
@@ -207,6 +207,7 @@ export default function PtFacebookPage() {
             { code: "es", short: "ES", label: "Español", href: "/es/facebook-video-downloader/" },
           ]}
         />
+        <Breadcrumb homeHref="/pt/" homeLabel="Início" current="Baixar Vídeo do Facebook" />
         <section className="mx-auto max-w-5xl px-4 pb-16 pt-8 sm:pb-20 sm:pt-12">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold/90">

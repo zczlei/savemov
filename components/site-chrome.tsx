@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { Mark } from "@/components/mark";
 import { otherLanguages, platformsFor, type Copy } from "@/lib/copy";
@@ -93,6 +94,34 @@ export function BookmarkletLink({ lang, tone = "light" }: { lang: string; tone?:
   );
 }
 
+export function Breadcrumb({
+  homeHref,
+  homeLabel,
+  current,
+}: {
+  homeHref: string;
+  homeLabel: string;
+  current: string;
+}) {
+  return (
+    <nav aria-label="Breadcrumb" className="border-y border-line bg-white text-ink">
+      <ol className="mx-auto flex max-w-5xl flex-wrap items-center gap-2 px-4 py-2.5 text-sm">
+        <li>
+          <Link href={homeHref} className="font-medium text-pine hover:underline">
+            {homeLabel}
+          </Link>
+        </li>
+        <li aria-hidden="true" className="text-ink/35">
+          /
+        </li>
+        <li aria-current="page" className="text-ink/75">
+          {current}
+        </li>
+      </ol>
+    </nav>
+  );
+}
+
 export function SiteHeader({
   c,
   tone = "dark",
@@ -111,6 +140,18 @@ export function SiteHeader({
   const summaryClass = light
     ? "cursor-pointer list-none rounded-full px-3 py-1.5 font-medium text-ink/80 marker:content-none hover:bg-white [&::-webkit-details-marker]:hidden"
     : "cursor-pointer list-none rounded-full px-3 py-1.5 font-medium text-white/80 marker:content-none hover:bg-white/10 [&::-webkit-details-marker]:hidden";
+
+  useEffect(() => {
+    function closeOnOutside(event: PointerEvent) {
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+      document.querySelectorAll("header details[open]").forEach((menu) => {
+        if (!menu.contains(target)) menu.removeAttribute("open");
+      });
+    }
+    document.addEventListener("pointerdown", closeOnOutside);
+    return () => document.removeEventListener("pointerdown", closeOnOutside);
+  }, []);
 
   return (
     <header className={light ? "border-b border-line bg-paper/90 backdrop-blur" : ""}>
