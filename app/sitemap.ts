@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { SIMPLE_PLATFORMS } from "@/lib/platform-pages";
 import { SITE } from "@/lib/site";
 
 const abs = (path: string) => `${SITE}${path}`;
@@ -86,5 +87,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7,
     },
+    ...SIMPLE_PLATFORMS.map((platform) => ({
+      url: abs(`/${platform.slug}/`),
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
   ];
 }

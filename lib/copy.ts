@@ -7,7 +7,6 @@ export type FormCopy = {
   button: string;
   paste: string;
   clear: string;
-  steps: [string, string, string, string];
   busy: string;
   ready: string;
   badUrl: string;
@@ -50,16 +49,21 @@ export type Copy = {
 };
 
 const SLUG = {
-  tt: "tiktok-downloader",
-  fb: "facebook-video-downloader",
   ig: "instagram-reels-downloader",
-  pi: "pinterest-video-downloader",
-  sn: "snapchat-video-downloader",
+  tw: "twitter-video-downloader",
+  fb: "facebook-video-downloader",
+  tt: "tiktok-downloader",
+  rd: "reddit-video-downloader",
+  bs: "bluesky-video-downloader",
   dm: "dailymotion-video-downloader",
-  st: "streamable-video-downloader",
   lo: "loom-video-downloader",
-  vk: "vk-video-downloader",
   ok: "okru-video-downloader",
+  pi: "pinterest-video-downloader",
+  ru: "rutube-video-downloader",
+  sn: "snapchat-video-downloader",
+  st: "streamable-video-downloader",
+  tb: "tumblr-video-downloader",
+  vk: "vk-video-downloader",
 } as const;
 
 export const EN: Copy = {
@@ -82,7 +86,6 @@ export const EN: Copy = {
     button: "Download MP4",
     paste: "Paste",
     clear: "Clear",
-    steps: ["Link", "Search", "Prepare", "Ready"],
     busy: "Finding the video…",
     ready: "Your video is ready.",
     badUrl: "Paste a full public link (starting with http:// or https://).",
@@ -145,7 +148,7 @@ export const EN: Copy = {
     },
     {
       q: "Which sites are supported?",
-      a: "Any public page that embeds a playable video, including Pinterest, TikTok, Instagram Reels, Facebook, Snapchat, VK, OK, Dailymotion, Streamable and Loom. Pages that require a login, private posts and DRM-protected streams are not supported.",
+      a: "Public pages on Instagram, Twitter/X, Facebook, TikTok, Reddit, Bluesky, Dailymotion, Loom, OK.ru, Pinterest, Rutube, Snapchat, Streamable, Tumblr and VK. Pages that require a login, private posts and DRM-protected streams are not supported.",
     },
     {
       q: "Can I download a full playlist?",
@@ -173,22 +176,27 @@ export const EN: Copy = {
     },
     {
       q: "Can I download WhatsApp status videos?",
-      a: "No. WhatsApp Status has no public link a website can read, so no online downloader – including this one – can save it. Anything that does give you a public link (TikTok, Instagram, Facebook, Pinterest) works above.",
+      a: "No. WhatsApp Status has no public link a website can read, so no online downloader – including this one – can save it. Public links from the platforms listed above work here.",
     },
   ],
   badges: ["MP4", "Source quality", "No sign-up", "iPhone & Android"],
   platformsH2: "Video downloaders by platform",
   platforms: [
-    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader", note: "Save video pins from any public board." },
-    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader", note: "Paste the share link to keep the video file." },
-    { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader", note: "Reels and video posts from public profiles." },
-    { slug: SLUG.fb, label: "Facebook", anchor: "Facebook Video Downloader", note: "Public videos and Reels from pages and groups you can open." },
-    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader", note: "Spotlight clips from a shared link." },
-    { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
-    { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
-    { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru Video Downloader" },
+    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader" },
+    { slug: SLUG.tw, label: "Twitter/X", anchor: "Twitter Video Downloader" },
+    { slug: SLUG.rd, label: "Reddit", anchor: "Reddit Video Downloader" },
+    { slug: SLUG.fb, label: "Facebook", anchor: "Facebook Video Downloader" },
+    { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader" },
+    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader" },
+    { slug: SLUG.bs, label: "Bluesky", anchor: "Bluesky Video Downloader" },
     { slug: SLUG.dm, label: "Dailymotion", anchor: "Dailymotion Video Downloader" },
     { slug: SLUG.lo, label: "Loom", anchor: "Loom Recording Downloader" },
+    { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru Video Downloader" },
+    { slug: SLUG.ru, label: "Rutube", anchor: "Rutube Video Downloader" },
+    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader" },
+    { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
+    { slug: SLUG.tb, label: "Tumblr", anchor: "Tumblr Video Downloader" },
+    { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
   ],
   footerNote: "Online video downloader.",
   legal: { terms: "Terms", privacy: "Privacy", copyright: "Copyright", contact: "Contact" },
@@ -223,7 +231,6 @@ export const PT: Copy = {
     button: "Baixar vídeo",
     paste: "Colar",
     clear: "Limpar",
-    steps: ["URL", "Buscar", "Preparar", "Pronto"],
     busy: "Buscando o vídeo em {domain}…",
     ready: "O vídeo está pronto.",
     badUrl: "Isso não parece um link. Cole a URL completa de uma página pública (precisa começar com http:// ou https://).",
@@ -303,22 +310,27 @@ export const PT: Copy = {
     },
     {
       q: "Posso baixar vídeos do status do WhatsApp?",
-      a: "Não. O status do WhatsApp não tem link público que um site consiga ler, então nenhum downloader online — incluindo este — consegue salvá-lo. Links públicos de TikTok, Instagram, Facebook e Pinterest funcionam acima.",
+      a: "Não. O status do WhatsApp não tem link público que um site consiga ler, então nenhum downloader online — incluindo este — consegue salvá-lo. Links públicos das plataformas listadas acima funcionam aqui.",
     },
   ],
   badges: ["MP4", "Qualidade da origem", "Sem cadastro", "iPhone e Android"],
   platformsH2: "Baixadores por plataforma",
   platforms: [
-    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader", note: "Salve pins em vídeo de qualquer board público." },
-    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader", note: "Cole o link de compartilhar e fique com o arquivo." },
-    { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader", note: "Reels e vídeos de perfis públicos." },
-    { slug: SLUG.fb, href: "/pt/facebook-video-downloader/", label: "Facebook", anchor: "Baixar Vídeo do Facebook", note: "Vídeos e Reels públicos de páginas que você consegue abrir." },
-    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader", note: "Clips do Spotlight a partir de um link." },
-    { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
-    { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
-    { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru Video Downloader" },
+    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader" },
+    { slug: SLUG.tw, href: "/pt/twitter-video-downloader/", label: "Twitter/X", anchor: "Baixar Vídeo do Twitter (X)" },
+    { slug: SLUG.rd, href: "/pt/reddit-video-downloader/", label: "Reddit", anchor: "Baixar Vídeo do Reddit" },
+    { slug: SLUG.fb, href: "/pt/facebook-video-downloader/", label: "Facebook", anchor: "Baixar Vídeo do Facebook" },
+    { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader" },
+    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader" },
+    { slug: SLUG.bs, label: "Bluesky", anchor: "Bluesky Video Downloader" },
     { slug: SLUG.dm, label: "Dailymotion", anchor: "Dailymotion Video Downloader" },
     { slug: SLUG.lo, label: "Loom", anchor: "Loom Recording Downloader" },
+    { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru Video Downloader" },
+    { slug: SLUG.ru, label: "Rutube", anchor: "Rutube Video Downloader" },
+    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader" },
+    { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
+    { slug: SLUG.tb, label: "Tumblr", anchor: "Tumblr Video Downloader" },
+    { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
   ],
   footerNote: "Salve somente vídeos que você tem o direito de guardar.",
   legal: { terms: "Termos de uso", privacy: "Privacidade", copyright: "Direitos autorais", contact: "Contato" },
@@ -345,7 +357,6 @@ export const ES: Copy = {
     button: "Descargar",
     paste: "Pegar",
     clear: "Borrar",
-    steps: ["Enlace", "Buscar", "Preparar", "Listo"],
     busy: "Buscando el video en {domain}…",
     ready: "El video está listo.",
     badUrl: "Eso no parece un enlace. Pega la URL completa de una página pública (tiene que empezar por http:// o https://).",
@@ -425,22 +436,27 @@ export const ES: Copy = {
     },
     {
       q: "¿Puedo descargar estados de WhatsApp?",
-      a: "No. Los estados de WhatsApp no tienen un enlace público que un sitio pueda leer, así que ningún descargador en línea — este incluido — puede guardarlos. Los enlaces públicos de TikTok, Instagram, Facebook y Pinterest sí funcionan.",
+      a: "No. Los estados de WhatsApp no tienen un enlace público que un sitio pueda leer, así que ningún descargador en línea — este incluido — puede guardarlos. Los enlaces públicos de las plataformas de arriba sí funcionan.",
     },
   ],
   badges: ["MP4", "Calidad de origen", "Sin registro", "iPhone y Android"],
   platformsH2: "Descargadores por plataforma",
   platforms: [
-    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader", note: "Guarda pines en vídeo de cualquier tablero público." },
-    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader", note: "Pega el enlace para quedarte con el archivo." },
-    { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader", note: "Reels y vídeos de perfiles públicos." },
-    { slug: SLUG.fb, href: "/es/facebook-video-downloader/", label: "Facebook", anchor: "Descargar Videos de Facebook", note: "Vídeos y Reels públicos de páginas que puedas abrir." },
-    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader", note: "Clips de Spotlight desde un enlace compartido." },
-    { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
-    { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
-    { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru Video Downloader" },
+    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader" },
+    { slug: SLUG.tw, href: "/es/twitter-video-downloader/", label: "Twitter/X", anchor: "Descargar Video de Twitter (X)" },
+    { slug: SLUG.rd, href: "/es/reddit-video-downloader/", label: "Reddit", anchor: "Descargar Videos de Reddit" },
+    { slug: SLUG.fb, href: "/es/facebook-video-downloader/", label: "Facebook", anchor: "Descargar Videos de Facebook" },
+    { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader" },
+    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader" },
+    { slug: SLUG.bs, label: "Bluesky", anchor: "Bluesky Video Downloader" },
     { slug: SLUG.dm, label: "Dailymotion", anchor: "Dailymotion Video Downloader" },
     { slug: SLUG.lo, label: "Loom", anchor: "Loom Recording Downloader" },
+    { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru Video Downloader" },
+    { slug: SLUG.ru, label: "Rutube", anchor: "Rutube Video Downloader" },
+    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader" },
+    { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
+    { slug: SLUG.tb, label: "Tumblr", anchor: "Tumblr Video Downloader" },
+    { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
   ],
   footerNote: "Descarga únicamente videos que tengas derecho a conservar.",
   legal: { terms: "Términos de uso", privacy: "Privacidad", copyright: "Derechos de autor", contact: "Contacto" },
@@ -455,6 +471,12 @@ const LANG_LINKS = [
 
 export function otherLanguages(lang: string) {
   return LANG_LINKS.filter((item) => item.code !== lang);
+}
+
+export function platformsFor(lang: string) {
+  if (lang === "pt-BR" || lang === "pt") return PT.platforms;
+  if (lang === "es") return ES.platforms;
+  return EN.platforms;
 }
 
 export function buildMetadata(c: Copy): Metadata {

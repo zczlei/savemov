@@ -4,7 +4,7 @@ import DownloaderForm from "@/components/downloader-form";
 import JsonLd from "@/components/json-ld";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { EN, type FormCopy } from "@/lib/copy";
-import { SITE } from "@/lib/site";
+import { breadcrumbJsonLd, SITE } from "@/lib/site";
 
 const PATH = "/facebook-video-downloader/";
 const URL_ABS = `${SITE}${PATH}`;
@@ -86,8 +86,12 @@ const FAQ: { q: string; a: string }[] = [
     a: "No. There is nothing to install, no APK to sideload, no browser extension to grant permissions. You paste one public link in the browser you already use, on desktop, iPhone or Android. That is also why your downloads appear nowhere in your Facebook activity: the site never sees the request.",
   },
   {
-    q: "Can I download a private video, or from a group or a friend-only post?",
-    a: "No. Anything that needs a login, membership or an age gate is out of scope: this page never asks for your credentials, so it can only read what a logged-out visitor can open. A link that plays in a private browser window is public; one that shows a login wall is not, and there is no setting that changes this.",
+    q: "Can I download private Facebook videos?",
+    a: "No. Savemov only works with videos set to public on Facebook. Videos shared with friends only, or inside a private group, cannot be downloaded.",
+  },
+  {
+    q: "Does Savemov work with Facebook group videos?",
+    a: "It works if the group and the specific video are both set to public. Videos inside private or closed groups cannot be accessed without logging in.",
   },
   {
     q: "Why does the download look softer than the video on my screen?",
@@ -149,6 +153,7 @@ const jsonLd = [
       acceptedAnswer: { "@type": "Answer", text: faq.a },
     })),
   },
+  breadcrumbJsonLd("Home", `${SITE}/`, "Facebook Video Downloader", URL_ABS),
 ];
 
 export const metadata: Metadata = {

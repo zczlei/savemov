@@ -87,7 +87,6 @@ export default function DownloaderForm({ copy }: { copy: FormCopy }) {
     }
   }
 
-  const stepIndex = phase === "ready" ? 3 : phase === "fetching" ? 1 : phase === "error" ? 1 : 0;
   const message =
     phase === "fetching"
       ? copy.busy.replace("{domain}", domainOf(url))
@@ -131,7 +130,7 @@ export default function DownloaderForm({ copy }: { copy: FormCopy }) {
               disabled={phase === "fetching"}
               className="flex-1 rounded-2xl bg-ink px-6 py-3.5 text-base font-semibold text-white transition hover:bg-pine disabled:opacity-60 sm:min-w-40"
             >
-              {phase === "fetching" ? copy.steps[1] + "…" : copy.button}
+              {phase === "fetching" ? copy.busy : copy.button}
             </button>
           </div>
         </div>
@@ -141,30 +140,6 @@ export default function DownloaderForm({ copy }: { copy: FormCopy }) {
           </button>
         ) : null}
       </form>
-
-      <ol className="mt-4 flex flex-wrap items-center gap-x-1.5 gap-y-2 text-[11px] font-semibold sm:text-xs" aria-label="Download progress">
-        {copy.steps.map((step, index) => {
-          const active = index === stepIndex && phase !== "ready";
-          const done = phase === "ready" || index < stepIndex;
-          return (
-            <li key={step} className="flex items-center gap-2">
-              <span
-                aria-current={active ? "step" : undefined}
-                className={
-                  active
-                    ? "rounded-full bg-ink px-2.5 py-1 text-white"
-                    : done
-                      ? "rounded-full bg-sand px-2.5 py-1 text-pine"
-                      : "rounded-full px-2.5 py-1 text-ink/35"
-                }
-              >
-                {index + 1} {step}
-              </span>
-              {index < copy.steps.length - 1 ? <span className="text-ink/20">›</span> : null}
-            </li>
-          );
-        })}
-      </ol>
 
       <p id="url-status" role="status" aria-live="polite" className="mt-3 min-h-6 text-sm text-ink/70">
         {message}

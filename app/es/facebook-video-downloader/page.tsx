@@ -87,8 +87,12 @@ const FAQ: { q: string; a: string }[] = [
     a: "No. Todo funciona en el navegador que ya usas, en el ordenador o en el móvil. Las apps y extensiones piden permisos que nunca usan y siguen activas después de cerrar la pestaña; además, un APK instalado fuera de Play Store es una de las puertas de malware más comunes en Android. Aquí solo envías un enlace público: no se instala nada.",
   },
   {
-    q: "¿Funciona con vídeos de grupos, de amigos o de perfiles privados?",
-    a: "No, y desconfía de quien prometa lo contrario. Un grupo privado, un post limitado a amigos, una comunidad con restricción de edad o un perfil cerrado no tienen ninguna versión pública que esta página pueda leer. Los servicios que afirman abrir ese contenido piden tu contraseña, una extensión que ve todo lo que haces o acceso a tu cuenta de Facebook.",
+    q: "¿Puedo descargar vídeos privados de Facebook?",
+    a: "No. Savemov solo funciona con vídeos configurados como públicos. Los vídeos solo para amigos, o dentro de un grupo privado, no se pueden descargar.",
+  },
+  {
+    q: "¿Savemov funciona con vídeos de grupos de Facebook?",
+    a: "Funciona si el grupo y el vídeo concreto están ambos en público. Los vídeos de grupos privados o cerrados no se pueden abrir sin iniciar sesión.",
   },
   {
     q: "¿Cómo descargar un vídeo de Facebook en el iPhone?",

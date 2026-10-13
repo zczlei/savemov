@@ -4,7 +4,7 @@ import DownloaderForm from "@/components/downloader-form";
 import JsonLd from "@/components/json-ld";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { EN, type FormCopy } from "@/lib/copy";
-import { SITE } from "@/lib/site";
+import { breadcrumbJsonLd, SITE } from "@/lib/site";
 
 const PATH = "/reddit-video-downloader/";
 const URL_ABS = `${SITE}${PATH}`;
@@ -139,6 +139,7 @@ const jsonLd = [
       text: step.b,
     })),
   },
+  breadcrumbJsonLd("Home", `${SITE}/`, "Reddit Video Downloader", URL_ABS),
 ];
 
 export const metadata: Metadata = {

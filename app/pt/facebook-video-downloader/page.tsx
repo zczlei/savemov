@@ -87,8 +87,12 @@ const FAQ: { q: string; a: string }[] = [
     a: "Não. Tudo roda no navegador que você já tem, no celular ou no computador. Apps e extensões pedem permissões que não usam e ficam rodando depois que você para de usar; o APK baixado fora da Play Store é uma das principais portas de entrada de malware no Android. Aqui você manda um único link público e nada é instalado.",
   },
   {
-    q: "Funciona para vídeo de grupo, lista de amigos ou perfil privado?",
-    a: "Não, e é bom desconfiar de quem prometa o contrário. Grupo privado, post restrito a amigos, comunidade com restrição de idade e perfil fechado não têm versão pública para ser lida. Qualquer ferramenta que alegue abrir esse conteúdo quer sua senha, uma extensão que enxerga tudo ou um app com acesso à sua conta.",
+    q: "Posso baixar um vídeo privado do Facebook?",
+    a: "Não. O Savemov só lê vídeos definidos como públicos. Vídeos só para amigos, ou dentro de um grupo privado, não podem ser baixados.",
+  },
+  {
+    q: "O Savemov funciona com vídeos de grupos do Facebook?",
+    a: "Funciona se o grupo e o vídeo específico estiverem ambos públicos. Vídeos de grupos privados ou fechados não podem ser lidos sem login.",
   },
   {
     q: "Como baixar vídeo do Facebook no iPhone?",

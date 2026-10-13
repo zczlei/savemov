@@ -1,21 +1,9 @@
 import Link from "next/link";
 import DownloaderForm from "@/components/downloader-form";
 import JsonLd from "@/components/json-ld";
-import { SiteFooter, SiteHeader } from "@/components/site-chrome";
+import { BookmarkletLink, SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { buildJsonLd, type Copy } from "@/lib/copy";
-
-const PLATFORM_ICONS: Record<string, string> = {
-  "pinterest-video-downloader": "/platforms/pinterest.png",
-  "tiktok-downloader": "/platforms/tiktok.png",
-  "instagram-reels-downloader": "/platforms/instagram.png",
-  "facebook-video-downloader": "/platforms/facebook.png",
-  "snapchat-video-downloader": "/platforms/snapchat.png",
-  "streamable-video-downloader": "/platforms/streamable.png",
-  "vk-video-downloader": "/platforms/vk.png",
-  "okru-video-downloader": "/platforms/okru.png",
-  "dailymotion-video-downloader": "/platforms/dailymotion.png",
-  "loom-video-downloader": "/platforms/loom.png",
-};
+import { PLATFORM_ICONS } from "@/lib/platform-pages";
 
 function RichText({ text, emphasis }: { text: string; emphasis?: string }) {
   if (!emphasis) return text;
@@ -62,6 +50,9 @@ export default function HomePage({ c }: { c: Copy }) {
               {c.legal.copyright}
             </Link>
           </p>
+          <div className="mx-auto mt-3 max-w-2xl text-center">
+            <BookmarkletLink lang={c.lang} tone="dark" />
+          </div>
 
           <p className="mx-auto mt-5 max-w-3xl text-center text-sm leading-7 text-white/70">
             {c.platformLead}{" "}

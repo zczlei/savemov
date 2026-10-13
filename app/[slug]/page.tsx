@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import PlatformDownloader, { platformMetadata } from "@/components/platform-downloader";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { EN } from "@/lib/copy";
 import { PLACEHOLDERS } from "@/lib/placeholders";
+import { SIMPLE_PLATFORMS, platformBySlug } from "@/lib/platform-pages";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return Object.keys(PLACEHOLDERS).map((slug) => ({ slug }));
+  return [
+    ...SIMPLE_PLATFORMS.map((platform) => ({ slug: platform.slug })),
+    ...Object.keys(PLACEHOLDERS).map((slug) => ({ slug })),
+  ];
 }
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  const platform = platformBySlug(slug);
+  if (platform) return platformMetadata(platform);
   const title = PLACEHOLDERS[slug];
   if (!title) return {};
   return {
@@ -23,8 +30,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function PlaceholderPage({ params }: Props) {
+export default async function SlugPage({ params }: Props) {
   const { slug } = await params;
+  const platform = platformBySlug(slug);
+  if (platform) return <PlatformDownloader platform={platform} />;
+
   const title = PLACEHOLDERS[slug];
   if (!title) notFound();
 
