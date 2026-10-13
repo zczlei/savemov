@@ -18,6 +18,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="9PhG5rWbPgpv6rkGm9bSzA" async />
+      </head>
       <body className="antialiased">{children}</body>
     </html>
   );
