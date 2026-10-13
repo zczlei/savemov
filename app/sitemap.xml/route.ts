@@ -38,6 +38,8 @@ function sitemapXml() {
     entry("/pt/reddit-video-downloader/", 0.7),
     entry("/es/reddit-video-downloader/", 0.7),
     entry("/snapchat-video-downloader/", 0.8),
+    entry("/dailymotion-video-downloader/", 0.8),
+    entry("/vk-video-downloader/", 0.8),
     ...SIMPLE_PLATFORMS.map((platform) => entry(`/${platform.slug}/`, 0.6)),
   ];
 

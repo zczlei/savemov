@@ -1,4 +1,6 @@
 /** TikTok page copy. The page and its JSON-LD both read this file. */
+import { iphoneCameraRollFaq, noSaveButtonFaq } from "@/lib/iphoneFaq";
+import { NO_SAVE_REASON } from "@/lib/iphoneReasons";
 
 export type TiktokCopy = {
   locale: "en" | "pt" | "es";
@@ -64,7 +66,7 @@ export const TIKTOK_EN: TiktokCopy = {
     { t: "No app or APK", d: "Runs in the browser you already have." },
     { t: "Original sound kept", d: "The track from the post travels with the file." },
     { t: "No watermark added", d: "We never stamp the file; a mark already inside it stays as it is." },
-    { t: "iPhone & Android", d: "One flow, no file manager required." },
+    { t: "iPhone & Android", d: "One link, one button – no app to install and nothing to configure. On iPhone the file lands in the Files app first; the FAQ below has the two taps that move it into Photos." },
   ],
   how: {
     title: "How to download a TikTok video",
@@ -128,10 +130,18 @@ export const TIKTOK_EN: TiktokCopy = {
       { q: "How do I download a TikTok video?", a: "Tap Share → Copy link on the video, paste the address in the box above and press Download MP4. Savemov finds the file behind the player and returns a copy you can save – no app, no sign-up, no TikTok account." },
       { q: "Is this TikTok downloader without watermark?", a: "Yes – in the narrow sense that we add nothing. Savemov never stamps a logo on the file, and saving from a link avoids the mark TikTok adds when you save inside the app. A watermark already inside the picture stays where it is: anything claiming to erase it re-encodes the video and softens it." },
       { q: "Do I need a TikTok downloader app or APK?", a: "No. Nothing to install, no APK to sideload, no extension to grant permissions. You paste one public link in the browser you already use, on desktop, iPhone or Android. That is also why nothing here shows up in your TikTok activity: the app is never involved." },
+      iphoneCameraRollFaq({
+        q: "How do I download a TikTok video to my iPhone camera roll?",
+        copyStep: "Tap Share → Copy link on the video",
+      }),
       { q: "Does the MP4 keep the original sound?", a: "Yes – the audio from the post travels with the file. If your result has no sound, the post itself was published muted, or your browser started it muted; the saved file is not the muted part." },
       { q: "Can I get the TikTok sound as an MP3?", a: "No. This page returns the video file, not split audio. Turning a clip into MP3 means re-encoding the thing you asked us to keep intact, so we do not offer it." },
       { q: "Can I download a TikTok photo post or slideshow?", a: "Photo posts are a sequence of images with music, not a video file – there is no MP4 behind them, so this page has nothing to return." },
       { q: "Why does my TikTok link not work?", a: "Four usual reasons: the account is private, the video was deleted or taken down, the address came from a direct message, or you pasted a profile link instead of a video link. Open it in a private window – if it does not play there, nothing can download it." },
+      noSaveButtonFaq({
+        q: "Why can't I save a TikTok video from the app on my iPhone?",
+        reason: NO_SAVE_REASON.TikTok,
+      }),
       { q: "Do vm.tiktok.com and vt.tiktok.com short links work?", a: "Yes. Paste them as they are; they resolve to the same post before the file is read." },
       { q: "Is this TikTok downloader free, and is there a limit?", a: "Free, with no sign-up and no account. Each request saves one public video as MP4, at the quality the post published." },
       { q: "How is this different from the tools people argue about on Reddit?", a: "Two things to check in any TikTok downloader: does it want your login or an extension, and does it keep the file. Savemov takes neither, and the result link is not stored on our side." },

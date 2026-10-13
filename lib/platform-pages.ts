@@ -1,5 +1,5 @@
 /** English platform pages that share one downloader layout.
- * Twitter, Reddit, Facebook, TikTok, Instagram, Pinterest and Snapchat have their own pages and are not listed here. */
+ * Twitter, Reddit, Facebook, TikTok, Instagram, Pinterest, Snapchat, Dailymotion and VK have their own pages and are not listed here. */
 
 export type SimplePlatform = {
   slug: string;
@@ -12,11 +12,6 @@ export const SIMPLE_PLATFORMS: SimplePlatform[] = [
     slug: "bluesky-video-downloader",
     name: "Bluesky",
     scope: "Public Bluesky posts. Private accounts stay out of reach.",
-  },
-  {
-    slug: "dailymotion-video-downloader",
-    name: "Dailymotion",
-    scope: "Public Dailymotion videos.",
   },
   {
     slug: "loom-video-downloader",
@@ -42,11 +37,6 @@ export const SIMPLE_PLATFORMS: SimplePlatform[] = [
     slug: "tumblr-video-downloader",
     name: "Tumblr",
     scope: "Public Tumblr video posts.",
-  },
-  {
-    slug: "vk-video-downloader",
-    name: "VK",
-    scope: "Public VK videos.",
   },
 ];
 

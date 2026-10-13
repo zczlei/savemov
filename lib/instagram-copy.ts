@@ -40,43 +40,43 @@ export const IG_EN: InstagramCopy = {
   ogLocale: "en_US",
   path: "/instagram-reels-downloader/",
   homePath: "/",
-  title: "Instagram Reels Downloader – Save Videos as MP4, No Watermark",
+  title: "Instagram Reels Downloader – Save Reels & Stories as MP4",
   description:
-    "Download Instagram Reels as MP4 with the original sound – paste an instagram.com/reel/… or instagram.com/p/… link. No app, no sign-up, no watermark added.",
+    "Save Instagram Reels and Stories as MP4 with the original sound. Paste an instagram.com/reel/… or /stories/… link – no app, no sign-up, no watermark added.",
   appName: "Savemov Instagram Reels Downloader",
   featureList: [
     "Download Instagram Reels",
-    "Save feed videos as MP4",
-    "Original sound kept",
-    "No watermark added",
-    "No app or sign-up",
-    "Works on iPhone and Android",
+    "Save Instagram Stories",
+    "Download Instagram videos",
+    "Feed videos as MP4",
+    "Carousels and galleries",
+    "No app, APK or sign-up",
   ],
   eyebrow: "No app · No sign-up · No watermark added",
-  h1: "Download Instagram Reels, Videos and Carousels from Any Link",
+  h1: "Download Instagram Reels, Stories and Videos from Any Link",
   h2: "Free Instagram video downloader – paste an instagram.com/reel/… or instagram.com/p/… link and save the MP4 with its original sound.",
   formLabel: "Link to the Instagram post",
-  formPlaceholder: "Paste an Instagram link – instagram.com/reel/…, instagram.com/p/… or a share link",
+  formPlaceholder: "Paste an instagram.com/reel/…, /p/… or /stories/… link",
   formButton: "Download MP4",
-  helper: "Public posts only. We never ask for an Instagram login.",
+  helper: "Public posts and Stories only. We never ask for an Instagram login.",
   home: "Home",
   crumb: "Instagram Reels Downloader",
   badges: [
-    { t: "No app or APK", d: "Runs in the browser you already have." },
+    { t: "No app or APK", d: "Runs in the browser you already have, on desktop, iPhone or Android." },
     { t: "Original sound kept", d: "The audio from the post travels with the file." },
     { t: "No watermark added", d: "We never stamp the file; a mark already in the picture stays." },
-    { t: "Public posts only", d: "Private accounts and friend-only posts are out of reach by design." },
+    { t: "Public posts and Stories only", d: "Private accounts, friend-only posts and DMs are out of reach by design." },
   ],
   how: {
     title: "How to download an Instagram Reel",
     steps: [
       {
         h: "Open the post in a browser",
-        p: "From the app tap the three dots → Link → Copy link. You get an address like instagram.com/reel/xxxxxxx/ for a Reel, or instagram.com/p/xxxxxxx/ for a feed video.",
+        p: "From the app tap the three dots → Link → Copy link. You get an address like instagram.com/reel/xxxxxxx/ for a Reel, instagram.com/p/xxxxxxx/ for a feed video, or instagram.com/stories/username/xxxxxxx/ for a Story.",
       },
       {
-        h: "Check it is public",
-        p: "Paste the link into a private window and log out. If the video plays there, this page can read it too. Anything from a private account stays behind the login wall.",
+        h: "Check it is public and still up",
+        p: "Paste the link into a private window and log out. If it plays there, this page can read it too. A Story the author already let expire, and anything from a private account, stays behind the wall.",
       },
       {
         h: "Paste it above and hit Download MP4",
@@ -84,17 +84,25 @@ export const IG_EN: InstagramCopy = {
       },
       {
         h: "Save it to your device",
-        p: "The result link comes back with the response, so download on the spot – Savemov does not keep a copy.",
+        p: "The result link comes back with the response, so download on the spot – Savemov does not keep a copy. That matters most with Stories, which disappear on their own.",
       },
     ],
   },
   kinds: {
     title: "What this Instagram downloader can save",
     cards: [
-      { h: "Reels", p: "instagram.com/reel/… links – saved as MP4 in the vertical format the post was published in." },
+      { h: "Reels", p: "instagram.com/reel/… links – saved as MP4 in the vertical format the post was published in. A short instagram.com/share/reel/… address can come back as a still image instead of the video; open the Reel and copy instagram.com/reel/… instead." },
+      {
+        h: "Stories",
+        p: "A video Story from a public account saves the same way a Reel does. It has to still be up: the author sets how long a Story lives, and once it is gone there is no public file left to prepare.",
+      },
       { h: "Feed videos", p: "A single video in the grid (instagram.com/p/…). Audio included." },
       { h: "The video inside a carousel", p: "A mixed carousel can hold a video slide; that slide comes back as MP4." },
-      { h: "Your own posts", p: "Back up a Reel before editing or deleting it." },
+      { h: "Your own posts", p: "Back up a Reel or a Story before editing or deleting it." },
+      {
+        h: "Photos, photo Stories and DMs",
+        p: "A photo is an image, not a video, so there is no MP4 to hand back – that includes photo-only Stories. Messages sent in Direct have no public address and no downloader can honestly reach them.",
+      },
     ],
   },
   formats: {
@@ -102,6 +110,7 @@ export const IG_EN: InstagramCopy = {
     body: [
       "Savemov keeps the file Instagram already serves: an MP4 with the audio track from the post. No conversion, no re-encoding, no watermark of ours on top.",
       "Quality follows the upload, not our settings. A video published at a lower resolution downloads at that resolution, and we will not upscale it to pretend otherwise. That is why there is no HD switch on this page.",
+      "We return the video file only. There is no separate MP3, no photo save and no GIF export – splitting the audio or turning a clip into a loop would mean re-encoding the file you asked for. If a result ever comes out silent, the post was published without sound.",
     ],
   },
   mark: {
@@ -113,10 +122,11 @@ export const IG_EN: InstagramCopy = {
     ],
   },
   privacy: {
-    title: "Public posts only – private accounts",
+    title: "Public posts only – private accounts and Stories",
     body: [
       "This page reads only what a logged-out visitor can already see. Instagram puts private accounts, friend-only posts and most DMs behind a login, so there is no public file for us to prepare, and no setting here changes that.",
       "It is also why no Instagram downloader can honestly promise private content. Any tool asking for your login, a browser extension or an APK with permissions it has no use for is not fetching a public file – it is collecting your account. Savemov asks for none of it: one public link, nothing stored, nothing installed.",
+      "Two things worth knowing before you save a Story. First, a Story only exists while the author keeps it up – when it drops off, the file goes with it, so save it at the time you watch it. Second, Savemov never signs into Instagram and holds no Instagram session, so nothing we do can be reported back to anyone; what happens inside the Instagram app itself is Instagram's own behaviour, which we neither control nor claim to switch off.",
     ],
   },
   faq: {
@@ -125,14 +135,21 @@ export const IG_EN: InstagramCopy = {
       { q: "How do I download an Instagram Reel?", a: "Tap the three dots on the Reel → Link → Copy link, paste it above and press Download MP4. Savemov returns the file the player streams – no app, no sign-up, no Instagram account." },
       { q: "Is this Instagram downloader without watermark?", a: "Yes, in the narrow sense: we add nothing, and saving from a link avoids the @username mark Instagram puts on in-app saves. A watermark already inside the picture stays where it is – removing it would mean re-encoding and softening the video." },
       { q: "Do I need an Instagram downloader app or APK?", a: "No. Nothing to install or sideload, no extension, no permissions. You paste one public link in the browser you already use, on desktop, iPhone or Android – which is also why nothing here appears in your Instagram activity." },
+      { q: "How do I save a Reel to my camera roll on iPhone?", a: "Copy the link on the Reel (three dots → Link → Copy link), paste it above and press Download MP4 in Safari. iOS then does one thing Android does not: the MP4 lands in the Files app rather than straight in Photos. Open Safari's download list, tap the file, press Share → Save Video and it is in your camera roll. No App Store app is needed." },
+      { q: "Can I download Instagram Stories too?", a: "If the account is public and the Story is still live, yes – paste a link like instagram.com/stories/username/xxxxxxx/ and you get back the MP4 the player streams, sound included. A photo-only Story has no video file to return, and a Story the author has already let disappear cannot be brought back." },
+      { q: "Why does my Instagram link not work?", a: "The usual reasons: the account is private, the post was deleted or archived, the Story has already expired, or you pasted a photo rather than a video. An instagram.com/share/reel/… link can also come back as a JPEG instead of the Reel – open the Reel and copy instagram.com/reel/… instead. If the address does not play in a private window while logged out, there is no public file to save." },
       { q: "Can I download a video from a private Instagram account?", a: "No. A private account's posts are visible only to approved followers when logged in, so there is no public file for any downloader to read. Tools promising otherwise want your login; that is how accounts get stolen." },
+      { q: "Will the other person know I downloaded their Reel or Story?", a: "Savemov never signs into Instagram and never touches your account, so nothing on our side can be reported to anyone. What the Instagram app itself shows is Instagram's own behaviour – we do not control it and cannot promise more than that." },
       { q: "Can I save Instagram photos or a whole carousel?", a: "Photos are images, not video – this page returns an MP4, so a photo post has nothing to hand back. A mixed carousel is different: its video slide comes back as MP4." },
+      { q: "Can I get the Instagram audio as an MP3?", a: "No – the file is returned with its sound still inside the MP4, and we do not strip it out into a separate audio track. If the original sound matters, save the video; if the post was published without sound, the result will be silent too." },
+      { q: "Is this Instagram downloader free, and is there a limit?", a: "Yes – no sign-up and no account behind it. Each request saves one public video as MP4, at the quality that page published. There is no separate account to register and no Pro version behind it." },
+      { q: "Can I back up my own Reels and Stories?", a: "Yes, as long as they are public at the moment you save them – copy the link from your own post the same way. Once you switch an account to private, this page can no longer see your own posts either; for a full export of your account, Instagram's own Download your information is the right tool." },
     ],
   },
   copyrightLink: "Copyright",
   notice: {
     title: "Before you save someone's video",
-    body: "Reels and posts belong to the people who made them. Saving for your own offline viewing or backing up your own account is one thing; reposting, selling or trimming someone else's work into your own is another. Rights holders can ask us to act on valid notices under our",
+    body: "Reels, Stories and posts belong to the people who made them. Saving for your own offline viewing or backing up your own account is one thing; reposting, selling or trimming someone else's work into your own is another. Rights holders can ask us to act on valid notices under our",
     link: "Copyright policy",
   },
   relatedTitle: "Other downloaders",
@@ -141,6 +158,7 @@ export const IG_EN: InstagramCopy = {
     { href: "/facebook-video-downloader/", label: "Facebook Video Downloader" },
     { href: "/twitter-video-downloader/", label: "Twitter Video Downloader" },
     { href: "/reddit-video-downloader/", label: "Reddit Video Downloader" },
+    { href: "/bluesky-video-downloader/", label: "Bluesky Video Downloader" },
   ],
 };
 
@@ -151,12 +169,13 @@ export const IG_PT: InstagramCopy = {
   ogLocale: "pt_BR",
   path: "/pt/instagram-reels-downloader/",
   homePath: "/pt/",
-  title: "Baixar Video do Instagram – Reels e Vídeos em MP4, Sem App",
+  title: "Baixar Video do Instagram – Reels e Stories em MP4, Sem App",
   description:
-    "Baixe Reels e vídeos do Instagram em MP4 com o som original – cole um link instagram.com/reel/… ou instagram.com/p/…. Sem app, sem cadastro, sem marca d'água adicionada.",
+    "Baixe Reels e Stories do Instagram em MP4 com o som original – cole um link instagram.com/reel/… ou instagram.com/stories/…. Sem app, sem cadastro, sem marca d'água adicionada.",
   appName: "Savemov – Baixar Video do Instagram",
   featureList: [
     "Baixar Reels do Instagram",
+    "Salvar Stories do Instagram",
     "Salvar vídeos do feed em MP4",
     "Som original mantido",
     "Sem marca d'água adicionada",
@@ -164,12 +183,12 @@ export const IG_PT: InstagramCopy = {
     "Funciona no iPhone e no Android",
   ],
   eyebrow: "Sem app · Sem cadastro · Sem marca d'água nossa",
-  h1: "Baixar Reels, Vídeos e Carrosséis do Instagram por Link",
+  h1: "Baixar Reels, Stories e Vídeos do Instagram por Link",
   h2: "Baixador de Instagram grátis – salve Reels e vídeos do feed em MP4 com o áudio original.",
   formLabel: "Link do post do Instagram",
-  formPlaceholder: "Cole um link – instagram.com/reel/…, instagram.com/p/… ou o link de Compartilhar",
+  formPlaceholder: "Cole um link – instagram.com/reel/…, instagram.com/p/… ou instagram.com/stories/…",
   formButton: "Baixar MP4",
-  helper: "Só posts públicos. Nunca pedimos login do Instagram.",
+  helper: "Só posts e Stories públicos. Nunca pedimos login do Instagram.",
   home: "Início",
   crumb: "Baixar Video do Instagram",
   badges: [
@@ -183,7 +202,7 @@ export const IG_PT: InstagramCopy = {
     steps: [
       {
         h: "Copie o link do post",
-        p: "Toque nos três pontos → Link → Copiar link. Um Reel vem como instagram.com/reel/xxxxxxx/, um vídeo do feed como instagram.com/p/xxxxxxx/.",
+        p: "Toque nos três pontos → Link → Copiar link. Um Reel vem como instagram.com/reel/xxxxxxx/, um vídeo do feed como instagram.com/p/xxxxxxx/, e um Story como instagram.com/stories/usuario/xxxxxxx/.",
       },
       {
         h: "Confira se é público",
@@ -202,7 +221,8 @@ export const IG_PT: InstagramCopy = {
   kinds: {
     title: "O que este baixador de Instagram consegue salvar",
     cards: [
-      { h: "Reels", p: "Links instagram.com/reel/… voltam em MP4, no formato vertical em que foram publicados." },
+      { h: "Reels", p: "Links instagram.com/reel/… voltam em MP4, no formato vertical em que foram publicados. Um endereço instagram.com/share/reel/… pode voltar só como imagem; abra o Reel e copie instagram.com/reel/…." },
+      { h: "Stories", p: "Um Story de vídeo de conta pública volta em MP4 enquanto ainda está no ar. Quando o autor deixa expirar, não resta arquivo. Story só de foto não é vídeo." },
       { h: "Vídeos do feed", p: "Vídeo único no grid (instagram.com/p/…), com o áudio." },
       { h: "O vídeo dentro do carrossel", p: "Carrossel misto pode ter um slide de vídeo: esse volta em MP4." },
       { h: "Seus próprios posts", p: "Faça backup de um Reel antes de editar ou apagar." },
@@ -235,6 +255,7 @@ export const IG_PT: InstagramCopy = {
       { q: "Como baixar Reels do Instagram?", a: "Toque nos três pontos → Link → Copiar link, cole acima e pressione Baixar MP4. O arquivo vem com o som original, sem app e sem cadastro." },
       { q: "Dá para salvar video do Instagram sem marca d'água?", a: "Sem a nossa, sempre. Como o link pula a gravação dentro do app, você recebe o arquivo que o player transmite, sem o @username por cima. Marca que já está na imagem continua lá." },
       { q: "Preciso de um app ou APK para baixar Instagram?", a: "Não. Nada para instalar, nenhuma permissão. Um link público no navegador que você já usa, no celular ou no computador." },
+      { q: "Dá para baixar Stories do Instagram?", a: "Sim, se a conta é pública e o Story ainda está no ar. Cole um link instagram.com/stories/usuario/xxxxxxx/ e o MP4 volta com o som. Story só de foto não tem vídeo, e Story que já expirou não volta." },
       { q: "Posso baixar vídeo de um perfil privado?", a: "Não. Post de conta privada só aparece para quem é aprovado e está logado – não há arquivo público para nenhum baixador ler." },
       { q: "Consigo salvar fotos ou um carrossel inteiro?", a: "Foto não é vídeo: esta página devolve um MP4, então um post só de fotos não tem arquivo de vídeo. No carrossel misto, o slide de vídeo volta normalmente." },
     ],
@@ -267,6 +288,7 @@ export const IG_ES: InstagramCopy = {
   appName: "Savemov – Descargar Videos de Instagram",
   featureList: [
     "Descargar Reels de Instagram",
+    "Guardar Stories de Instagram",
     "Guardar vídeos del feed en MP4",
     "Audio original conservado",
     "Sin marca de agua añadida",
@@ -277,7 +299,7 @@ export const IG_ES: InstagramCopy = {
   h1: "Descargar Videos de Instagram desde Cualquier Enlace",
   h2: "Descargador de Instagram gratis – guarda Reels y vídeos del feed en MP4 con su audio original.",
   formLabel: "Enlace de la publicación de Instagram",
-  formPlaceholder: "Pega un enlace – instagram.com/reel/…, instagram.com/p/… o el enlace de Compartir",
+  formPlaceholder: "Pega un enlace – instagram.com/reel/…, instagram.com/p/… o instagram.com/stories/…",
   formButton: "Descargar MP4",
   helper: "Solo publicaciones públicas. Nunca pedimos tu cuenta de Instagram.",
   home: "Inicio",
@@ -312,7 +334,8 @@ export const IG_ES: InstagramCopy = {
   kinds: {
     title: "Qué puede guardar este descargador de Instagram",
     cards: [
-      { h: "Reels", p: "Enlaces instagram.com/reel/… vuelven en MP4, en el formato vertical en que se publicaron." },
+      { h: "Reels", p: "Enlaces instagram.com/reel/… vuelven en MP4, en el formato vertical en que se publicaron. Una dirección instagram.com/share/reel/… puede volver solo como imagen; abre el Reel y copia instagram.com/reel/…." },
+      { h: "Stories", p: "Un Story de vídeo de una cuenta pública se guarda igual que un Reel, mientras siga visible. Si el autor ya lo dejó caducar, no queda archivo. Un Story solo de foto no es un MP4." },
       { h: "Vídeos del feed", p: "Un vídeo suelto de la cuadrícula (instagram.com/p/…), con su audio." },
       { h: "El vídeo de un carrusel", p: "Un carrusel mixto puede llevar una diapositiva de vídeo: esa vuelve en MP4." },
       { h: "Tus propias publicaciones", p: "Haz copia de seguridad de un Reel antes de editarlo o borrarlo." },
@@ -345,6 +368,7 @@ export const IG_ES: InstagramCopy = {
       { q: "¿Cómo descargo un Reel de Instagram?", a: "Toca los tres puntos → Enlace → Copiar enlace, pégalo arriba y pulsa Descargar MP4. Recibes el archivo con el audio original – sin app, sin registro y sin cuenta de Instagram." },
       { q: "¿Sirve para descargar videos de Instagram sin marca de agua?", a: "Sin la nuestra, siempre. Como el enlace se salta el guardado dentro de la app, te llega lo que emite el reproductor sin el @username encima. Una marca ya integrada en la imagen se queda donde está." },
       { q: "¿Necesito una app o un APK para Instagram?", a: "No. Nada que instalar ni permisos que dar. Pegas un enlace público en el navegador que ya usas, en el móvil o en el ordenador – y por eso nada de esto aparece en tu actividad de Instagram." },
+      { q: "¿Puedo descargar Stories de Instagram?", a: "Sí, si la cuenta es pública y el Story sigue en línea. Pega un enlace instagram.com/stories/usuario/xxxxxxx/ y vuelve el MP4 con el audio. Un Story solo de foto no tiene vídeo, y uno que ya caducó no se puede recuperar." },
       { q: "¿Puedo bajar un vídeo de una cuenta privada?", a: "No. Las publicaciones de una cuenta privada solo se ven si eres aprobado y tienes sesión: no hay archivo público para ningún descargador." },
       { q: "¿Puedo guardar fotos o un carrusel entero?", a: "Las fotos no son vídeo – esta página devuelve un MP4, así que un post solo de fotos no tiene archivo de vídeo que devolver. En un carrusel mixto, la diapositiva de vídeo sí vuelve." },
     ],

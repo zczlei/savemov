@@ -4,6 +4,8 @@ import DownloaderForm from "@/components/downloader-form";
 import JsonLd from "@/components/json-ld";
 import { Breadcrumb, SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { EN, type FormCopy } from "@/lib/copy";
+import { iphoneCameraRollFaq, noSaveButtonFaq } from "@/lib/iphoneFaq";
+import { NO_SAVE_REASON } from "@/lib/iphoneReasons";
 import { breadcrumbJsonLd, SITE } from "@/lib/site";
 
 const PATH = "/facebook-video-downloader/";
@@ -21,7 +23,7 @@ const BADGES = [
   { k: "No app or APK", v: "Runs in the browser you already have." },
   { k: "No watermark added", v: "We never stamp the file; the original mark stays as it is." },
   { k: "Reels & Stories", v: "Short-form and 24-hour posts, both from the same box." },
-  { k: "iPhone & Android", v: "One flow, no file manager required." },
+  { k: "iPhone & Android", v: "One link, one button – no app to install and nothing to configure. On iPhone the file lands in the Files app first; the FAQ below has the two taps that move it into Photos." },
 ];
 
 const STEPS = [
@@ -97,10 +99,17 @@ const FAQ: { q: string; a: string }[] = [
     q: "Why does the download look softer than the video on my screen?",
     a: "Usually the stream, not the tool. Facebook serves several versions and switches between them as your connection changes, so what you watched may have been a clearer picture than the file the page exposes. Savemov returns the file the post is already playing and never upscales – a file that looks soft here was soft at source.",
   },
-  {
-    q: "Does it work on iPhone and Android?",
-    a: "Yes. On Android the file lands in your Downloads folder. On iPhone tap Download MP4, then use Share → Save to Files so it leaves the browser and you can move it to Photos from there.",
-  },
+  (() => {
+    const item = iphoneCameraRollFaq({
+      q: "How do I download a Facebook video to my iPhone camera roll?",
+      copyStep: "Tap the three dots on the post, or Share → Copy Link",
+    });
+    return { q: item.q, a: `${item.a} On Android the file lands in your Downloads folder.` };
+  })(),
+  noSaveButtonFaq({
+    q: "Why is there no download button on this Facebook video?",
+    reason: NO_SAVE_REASON.Facebook,
+  }),
   {
     q: "Is this Facebook video downloader free, and is there a limit?",
     a: "Free, with no sign-up and no account. Each request saves one public video as MP4, at the quality the post published.",

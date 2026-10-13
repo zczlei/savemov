@@ -1,4 +1,6 @@
 /** Pinterest page copy. The page and its JSON-LD both read this file. */
+import { iphoneCameraRollFaq, noSaveButtonFaq } from "@/lib/iphoneFaq";
+import { NO_SAVE_REASON } from "@/lib/iphoneReasons";
 
 export type PinterestCopy = {
   locale: "en" | "pt" | "es";
@@ -130,6 +132,14 @@ export const PIN_EN: PinterestCopy = {
       { q: "Can I download a Pinterest image?", a: "No. This page turns video Pins into MP4 files. An Image Pin is a photo, so there is no video stream to prepare – use Pinterest's own download button or long-press save for that. If a Pin shows a moving preview, this page can handle it; if it is still, it cannot." },
       { q: "Is this Pinterest downloader without watermark?", a: "Yes – in the narrow sense that we add nothing. Savemov never stamps a logo on the file. Some Pins carry the creator's own handle or logo baked into the frames; that part is inside the video, and any tool claiming to erase it is re-encoding the clip, which makes the result softer than what you watched." },
       { q: "Do I need a Pinterest video downloader app?", a: "No. Nothing to install, no APK to sideload, no browser extension to grant permissions. You paste one public Pin link in the browser you already use – on desktop, iPhone or Android. Your Pinterest account is never involved, so nothing shows up in your activity." },
+      iphoneCameraRollFaq({
+        q: "How to download videos from Pinterest to camera roll on iPhone?",
+        copyStep: "On the Pin, tap Share → Copy link",
+      }),
+      noSaveButtonFaq({
+        q: "Why can't I download videos from Pinterest?",
+        reason: NO_SAVE_REASON.Pinterest,
+      }),
       { q: "Why is there no HD or 4K option?", a: "Because we hand back the file Pinterest already serves, at the resolution it was uploaded at. A switch that says 1080p or 4K cannot deliver more than the source holds – it would be upscaling. Quality therefore follows the Pin, and audio travels with it." },
       { q: "Can I get the Pin's sound as MP3?", a: "No. This page returns the video file, not split audio. If you only want the sound, save the MP4 – the track is inside it." },
       { q: "Why does my Pinterest link not work?", a: "The usual reasons: the Pin came from a secret board or a private account, it was deleted, or it is an Image Pin rather than a video. Pinterest messaging links also have no public page behind them. Open the link in a private window first – if it does not play there, no downloader can read it." },

@@ -8,6 +8,11 @@ export type FormCopy = {
   paste: string;
   clear: string;
   busy: string;
+  processing: string;
+  progressTitle: string;
+  progressDetail: string;
+  readyTitle: string;
+  readyBody: string;
   ready: string;
   badUrl: string;
   network: string;
@@ -87,13 +92,18 @@ export const EN: Copy = {
     paste: "Paste",
     clear: "Clear",
     busy: "Finding the video…",
+    processing: "Processing…",
+    progressTitle: "Processing your request…",
+    progressDetail: "Parsing video information from {domain}",
+    readyTitle: "Video Ready for Download!",
+    readyBody: "Your video has been processed successfully.",
     ready: "Your video is ready.",
     badUrl: "Paste a full public link (starting with http:// or https://).",
     network: "Couldn't reach Savemov. Check your connection and try again.",
     unsupported: "No video found at that link. Make sure the page is public and try again.",
     ratelimit: "Too many requests — wait a minute and try again.",
-    save: "Save",
-    another: "Download another",
+    save: "Download Video",
+    another: "Download Another",
   },
   how: {
     h2: "How to download a video from a link",
@@ -148,7 +158,7 @@ export const EN: Copy = {
     },
     {
       q: "Which sites are supported?",
-      a: "Public pages on Instagram, Twitter/X, Facebook, TikTok, Reddit, Bluesky, Dailymotion, Loom, OK.ru, Pinterest, Rutube, Snapchat, Streamable, Tumblr and VK. Pages that require a login, private posts and DRM-protected streams are not supported.",
+      a: "Public pages on Instagram, Twitter/X, Facebook, TikTok, Reddit, Bluesky, Dailymotion, Loom, Pinterest, Rutube, Snapchat, Streamable, Tumblr and VK. An ok.ru/video/… link only works when that page already plays without a login, and many of them come back with no file. Pages that require a login, private posts and DRM-protected streams are not supported.",
     },
     {
       q: "Can I download a full playlist?",
@@ -232,6 +242,11 @@ export const PT: Copy = {
     paste: "Colar",
     clear: "Limpar",
     busy: "Buscando o vídeo em {domain}…",
+    processing: "Processando…",
+    progressTitle: "Processando seu pedido…",
+    progressDetail: "Lendo as informações do vídeo em {domain}",
+    readyTitle: "Vídeo pronto para baixar!",
+    readyBody: "O vídeo foi processado.",
     ready: "O vídeo está pronto.",
     badUrl: "Isso não parece um link. Cole a URL completa de uma página pública (precisa começar com http:// ou https://).",
     network: "Não foi possível falar com o Savemov. Confira sua conexão e tente de novo.",
@@ -358,6 +373,11 @@ export const ES: Copy = {
     paste: "Pegar",
     clear: "Borrar",
     busy: "Buscando el video en {domain}…",
+    processing: "Procesando…",
+    progressTitle: "Procesando tu solicitud…",
+    progressDetail: "Leyendo la información del video en {domain}",
+    readyTitle: "¡Video listo para descargar!",
+    readyBody: "El video se procesó correctamente.",
     ready: "El video está listo.",
     badUrl: "Eso no parece un enlace. Pega la URL completa de una página pública (tiene que empezar por http:// o https://).",
     network: "No pudimos conectar con Savemov. Revisa tu conexión e inténtalo otra vez.",

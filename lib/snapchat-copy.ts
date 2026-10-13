@@ -1,4 +1,6 @@
 /** English Snapchat page copy. The page and its JSON-LD both read this file. */
+import { noSaveButtonFaq } from "@/lib/iphoneFaq";
+import { NO_SAVE_REASON } from "@/lib/iphoneReasons";
 
 export type SnapchatCopy = {
   locale: "en";
@@ -133,6 +135,14 @@ export const SNAP_EN: SnapchatCopy = {
       { q: "Will the other person know if I download it?", a: "Nothing in this flow touches your account, so there is no Snapchat event for anyone to see. Screenshots taken inside the app are a different thing: Snapchat itself tells the sender when you screenshot a Snap sent to you." },
       { q: "What is Snapchat Spotlight?", a: "Spotlight is Snapchat's public short-video feed – the equivalent of Reels or TikTok clips. Spotlight videos carry a shareable public link, which is why they work here the same way a public Story does." },
       { q: "Do I need a Snapchat app or APK?", a: "No. Nothing to install, no APK to sideload, no extension to grant permissions. You paste one public link in the browser you already use, on desktop, iPhone or Android. Apps for this exist – the Play Store entries on that search page are them – but a web page does the same job without permissions." },
+      {
+        q: "How do I save a Snapchat video to my iPhone camera roll?",
+        a: "Tap Share → Copy link on the Spotlight clip or public Story, paste the link above and press Download MP4 in Safari. The file lands in the Files app, not straight in Photos. A Spotlight download is an MP4, but the name often has no .mp4 ending, so Share → Save Video may not appear. It stays in Files. No App Store app, and nothing is signed in along the way.",
+      },
+      noSaveButtonFaq({
+        q: "Why is there no download button on a Snapchat Story?",
+        reason: NO_SAVE_REASON.Snapchat,
+      }),
       { q: "Can I save my own Memories with this?", a: "No – Memories live inside your account and are not published at a public link. For your own files, use Snapchat's My Data request (Settings → My Data): it emails you an export of the Snaps and Memories you saved." },
       { q: "Why did my Snapchat link not work?", a: "The four usual reasons: the Story has expired, the link came from a chat Snap rather than a public post, the profile is private, or you pasted a profile address instead of the clip's own link. Open it in a private window first – if it does not play there, nothing can download it." },
       { q: "Can I get the sound as MP3, or save a photo Story?", a: "No to both. This page returns the video file; splitting audio out would mean re-encoding, and a photo Story has no video file behind it to begin with." },
