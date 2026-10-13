@@ -23,7 +23,7 @@ export function SiteHeader({ c, tone = "dark" }: { c: Pick<Copy, "lang" | "path"
                   : "rounded-full px-2.5 py-1.5 font-medium text-white/75 hover:bg-white/10 hover:text-white sm:px-3"
               }
             >
-              <span className="sm:hidden">{item.code.toUpperCase()}</span>
+              <span className="sm:hidden">{item.short}</span>
               <span className="hidden sm:inline">{item.label}</span>
             </Link>
           ))}

@@ -69,8 +69,8 @@ export const EN: Copy = {
   path: "/",
   title: "Download Video from Link or URL – Free Online Video Downloader",
   desc:
-    "Paste a video link or URL and download it as MP4 for free. No app, no sign-up – " +
-    "works with TikTok, Instagram, Facebook, Telegram and any video page.",
+    "Download videos from any public link or URL as MP4 – free, no app, no sign-up. " +
+    "Works with TikTok, Instagram, Facebook, Telegram and more.",
   h1: "Download Videos from Any Link or URL",
   h2: "Free online video downloader – paste a link, get an MP4 in seconds",
   trust: "No app · No sign-up · MP4 · Free",
@@ -120,7 +120,7 @@ export const EN: Copy = {
   useCases: {
     h2: "Common use cases",
     items: [
-      { t: "Back up your own video", d: "Save your TikTok, Reel or Short as an MP4 before you delete or re-edit it." },
+      { t: "Back up your own video", d: "Save your TikTok or Instagram Reel as an MP4 before you delete or re-edit it." },
       { t: "Watch offline", d: "Keep a tutorial or a clip you found for a flight or a bad connection." },
       { t: "Send the file, not the link", d: "Hand it to someone whose device or data plan can't open the platform." },
     ],
@@ -139,6 +139,10 @@ export const EN: Copy = {
     {
       q: "Can I paste any kind of link?",
       a: "Yes: the page URL of a public video, a share link, or a link you received in a messaging app such as Telegram. If the link opens the video in your browser without a login, we can usually save it. A link that already points straight at an .mp4 file just plays in the browser – use your device's own save option for that one. Any public address works: use the video URL downloader to fetch the file behind the page instead of screen-recording it.",
+    },
+    {
+      q: "Is a link the same as a URL?",
+      a: "Yes – both point to the page holding the video. Copy the address from your browser bar or the share button; either one works here.",
     },
     {
       q: "Which sites are supported?",
@@ -202,7 +206,7 @@ export const EN: Copy = {
 };
 
 export const PT: Copy = {
-  lang: "pt",
+  lang: "pt-BR",
   ogLocale: "pt_BR",
   path: "/pt/",
   title: "Baixar Vídeo pela URL ou Link – Vídeos Online Grátis sem App",
@@ -240,6 +244,11 @@ export const PT: Copy = {
       { t: "Salve o arquivo", d: "Um toque e ele abre no seu aparelho. O Savemov não guarda uma cópia: salve na hora, porque o link da origem pode expirar." },
     ],
   },
+  format: {
+    h2: "Formatos e qualidade do arquivo",
+    body:
+      "O Savemov devolve o arquivo que a página já entrega: normalmente um MP4, que toca no iPhone, Android, Windows e Mac sem instalar codec nenhum. A qualidade é a do upload original — a ferramenta não inventa uma resolução maior. O link do arquivo volta junto com a resposta; baixe na hora, porque a página de origem pode sair do ar.",
+  },
   what: {
     h2: "O que esta ferramenta faz",
     body:
@@ -250,7 +259,7 @@ export const PT: Copy = {
   useCases: {
     h2: "Para que as pessoas usam",
     items: [
-      { t: "Guardar o seu vídeo antes de apagar", d: "Faça backup do seu TikTok, Reels ou Short em MP4 antes de remover ou reeditar a publicação." },
+      { t: "Guardar o seu vídeo antes de apagar", d: "Faça backup do seu TikTok ou dos seus Reels do Instagram em MP4 antes de apagar ou reeditar." },
       { t: "Assistir sem internet", d: "Salve uma aula ou um vídeo que você achou para ver no avião ou em uma conexão ruim." },
       { t: "Enviar o arquivo quando o link não abre", d: "Mande o vídeo pronto para quem está sem dados ou sem o aplicativo instalado." },
     ],
@@ -299,19 +308,20 @@ export const PT: Copy = {
       a: "Não. O status do WhatsApp não tem link público que um site consiga ler, então nenhum downloader online — incluindo este — consegue salvá-lo. Links públicos de TikTok, Instagram, Facebook, Telegram e Pinterest funcionam acima.",
     },
   ],
+  badges: ["MP4", "Qualidade da origem", "Sem cadastro", "iPhone e Android"],
   platformsH2: "Baixadores por plataforma",
   platforms: [
-    { slug: SLUG.tg, label: "Telegram", anchor: "Telegram" },
-    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok" },
-    { slug: SLUG.fb, label: "Facebook", anchor: "Facebook" },
-    { slug: SLUG.ig, label: "Reels do Instagram", anchor: "Reels do Instagram" },
-    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest" },
-    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat" },
-    { slug: SLUG.dm, label: "Dailymotion", anchor: "Dailymotion" },
-    { slug: SLUG.st, label: "Streamable", anchor: "Streamable" },
-    { slug: SLUG.lo, label: "Gravações do Loom", anchor: "Gravações do Loom" },
-    { slug: SLUG.vk, label: "VK", anchor: "VK" },
-    { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru" },
+    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader", note: "Salve pins em vídeo de qualquer board público." },
+    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader", note: "Cole o link de compartilhar e fique com o arquivo." },
+    { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader", note: "Reels e vídeos de perfis públicos." },
+    { slug: SLUG.fb, label: "Facebook", anchor: "Facebook Video Downloader", note: "Vídeos e Reels públicos de páginas que você consegue abrir." },
+    { slug: SLUG.tg, label: "Telegram", anchor: "Telegram Video Downloader", note: "Vídeos de canais públicos e links t.me." },
+    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader", note: "Clips do Spotlight a partir de um link." },
+    { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
+    { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
+    { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru Video Downloader" },
+    { slug: SLUG.dm, label: "Dailymotion", anchor: "Dailymotion Video Downloader" },
+    { slug: SLUG.lo, label: "Loom", anchor: "Loom Recording Downloader" },
   ],
   footerNote: "Salve somente vídeos que você tem o direito de guardar.",
   legal: { terms: "Termos de uso", privacy: "Privacidade", copyright: "Direitos autorais", contact: "Contato" },
@@ -325,7 +335,7 @@ export const ES: Copy = {
   title: "Descargar Videos Online por Link – Gratis, Sin App | Savemov",
   desc:
     "Descarga videos por link o URL en MP4, gratis y sin instalar apps. Funciona con TikTok, " +
-    "Instagram, Facebook, Telegram y cualquier enlace público. Actualizado 2026.",
+    "Instagram, Facebook, Telegram y cualquier enlace público.",
   h1: "Descargar videos desde cualquier enlace o URL",
   h2: "Pega el link y descarga el video en MP4 – gratis, online y sin instalar apps",
   trust: "Sin app · Sin registro · MP4 · Gratis",
@@ -357,17 +367,22 @@ export const ES: Copy = {
       { t: "Descarga el archivo", d: "Un toque y queda en tu dispositivo. Savemov no guarda una copia — descarga enseguida, porque el enlace de origen puede caducar." },
     ],
   },
+  format: {
+    h2: "Formatos y calidad del archivo",
+    body:
+      "Savemov devuelve el archivo que la página ya sirve: normalmente un MP4, que se ve en iPhone, Android, Windows y Mac sin instalar ningún códec. La calidad es la de la subida original: no inventamos una resolución más alta. El enlace llega junto con la respuesta, así que guárdalo en el momento; el enlace de origen puede caducar.",
+  },
   what: {
     h2: "Qué hace esta herramienta",
     body:
-      "Savemov lee una página pública que incluye un video reproducible, encuentra el archivo que esa página transmite y te da una copia para guardar: normalmente un MP4, en la calidad que ya publicó el origen.",
+      "Savemov sirve para descargar videos online desde una página pública: lee la página, encuentra el archivo que está reproduciendo y te da una copia.",
     limits:
       "No funciona con páginas que piden inicio de sesión, contenido privado, estados que no se abren en el navegador ni emisiones con DRM. Un video por solicitud: si pegas una lista, guardamos ese item.",
   },
   useCases: {
     h2: "Para qué se usa",
     items: [
-      { t: "Guardar tu video antes de borrarlo", d: "Haz copia en MP4 de tu TikTok, Reel o Short antes de eliminarlo o reeditarlo." },
+      { t: "Guardar tu video antes de borrarlo", d: "Guarda tu TikTok o tus Reels de Instagram en MP4 antes de eliminarlos o reeditarlos." },
       { t: "Ver sin conexión", d: "Guarda un tutorial o un clip que encontraste para verlo en el avión o con mala señal." },
       { t: "Enviar el archivo cuando el enlace no carga", d: "Pasa el video listo a quien no tiene datos o no tiene la app instalada." },
     ],
@@ -416,19 +431,20 @@ export const ES: Copy = {
       a: "No. Los estados de WhatsApp no tienen un enlace público que un sitio pueda leer, así que ningún descargador en línea — este incluido — puede guardarlos. Los enlaces públicos de TikTok, Instagram, Facebook, Telegram y Pinterest sí funcionan.",
     },
   ],
+  badges: ["MP4", "Calidad de origen", "Sin registro", "iPhone y Android"],
   platformsH2: "Descargadores por plataforma",
   platforms: [
-    { slug: SLUG.tg, label: "Telegram", anchor: "Telegram" },
-    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok" },
-    { slug: SLUG.fb, label: "Facebook", anchor: "Facebook" },
-    { slug: SLUG.ig, label: "Reels de Instagram", anchor: "Reels de Instagram" },
-    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest" },
-    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat" },
-    { slug: SLUG.dm, label: "Dailymotion", anchor: "Dailymotion" },
-    { slug: SLUG.st, label: "Streamable", anchor: "Streamable" },
-    { slug: SLUG.lo, label: "Grabaciones de Loom", anchor: "Grabaciones de Loom" },
-    { slug: SLUG.vk, label: "VK", anchor: "VK" },
-    { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru" },
+    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader", note: "Guarda pines en vídeo de cualquier tablero público." },
+    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader", note: "Pega el enlace para quedarte con el archivo." },
+    { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader", note: "Reels y vídeos de perfiles públicos." },
+    { slug: SLUG.fb, label: "Facebook", anchor: "Facebook Video Downloader", note: "Vídeos y Reels públicos de páginas que puedas abrir." },
+    { slug: SLUG.tg, label: "Telegram", anchor: "Telegram Video Downloader", note: "Vídeos de canales públicos y enlaces t.me." },
+    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader", note: "Clips de Spotlight desde un enlace compartido." },
+    { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
+    { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
+    { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru Video Downloader" },
+    { slug: SLUG.dm, label: "Dailymotion", anchor: "Dailymotion Video Downloader" },
+    { slug: SLUG.lo, label: "Loom", anchor: "Loom Recording Downloader" },
   ],
   footerNote: "Descarga únicamente videos que tengas derecho a conservar.",
   legal: { terms: "Términos de uso", privacy: "Privacidad", copyright: "Derechos de autor", contact: "Contacto" },
@@ -436,9 +452,9 @@ export const ES: Copy = {
 };
 
 const LANG_LINKS = [
-  { code: "en", label: "English", href: "/" },
-  { code: "pt", label: "Português", href: "/pt/" },
-  { code: "es", label: "Español", href: "/es/" },
+  { code: "en", short: "EN", label: "English", href: "/" },
+  { code: "pt-BR", short: "PT", label: "Português", href: "/pt/" },
+  { code: "es", short: "ES", label: "Español", href: "/es/" },
 ];
 
 export function otherLanguages(lang: string) {

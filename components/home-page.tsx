@@ -22,7 +22,7 @@ export default function HomePage({ c }: { c: Copy }) {
   const heroPlatforms = c.platforms.slice(0, 6);
 
   return (
-    <div className="min-h-screen bg-paper text-ink">
+    <div className="min-h-screen bg-paper text-ink" lang={c.lang}>
       <JsonLd data={buildJsonLd(c)} />
       <a href="#main" className="skip-link">
         {c.skip}
@@ -66,7 +66,7 @@ export default function HomePage({ c }: { c: Copy }) {
         </section>
       </div>
 
-      <main id="main" lang={c.lang}>
+      <main id="main">
         <section className="mx-auto -mt-8 grid max-w-5xl grid-cols-2 gap-3 px-4 sm:grid-cols-4">
           {(c.badges ?? trust).map((item) => (
             <div key={item} className="rounded-2xl border border-line bg-white px-4 py-3 text-center text-sm font-semibold text-pine shadow-sm">
