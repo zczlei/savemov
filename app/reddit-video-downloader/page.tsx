@@ -69,7 +69,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "How do I save a Reddit video to my iPhone?",
-    a: "Tap Download MP4, then open the result and use Share → Save to Files so it leaves the browser. On Android the file lands in your Downloads folder.",
+    a: "Tap Download MP4. On Android the file lands in your Downloads folder. On iPhone it lands in the Files app, not straight in Photos. Open Safari's download list, tap the file, press Share → Save Video, and it is in your camera roll.",
   },
   {
     q: "Can I get 1080p, 4K or the original upload?",
@@ -282,9 +282,8 @@ export default function RedditVideoDownloaderPage() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
+                  className="rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition before:mr-1.5 before:text-ink/40 before:content-['↗'] hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
                 >
-                  <span className="text-ink/40">↗ </span>
                   {item.label}
                 </Link>
               ))}

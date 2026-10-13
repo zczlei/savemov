@@ -69,7 +69,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Como salvar um vídeo do Twitter no celular?",
-    a: "No Android o arquivo cai direto na pasta Downloads. No iPhone, toque em Baixar MP4, abra o resultado em Compartilhar → Salvar em Arquivos (ou 'Salvar Vídeo') para que saia do navegador e fique no aparelho.",
+    a: "No Android o arquivo cai direto na pasta Downloads. No iPhone, toque em Baixar MP4: o arquivo cai primeiro no app Arquivos, não direto em Fotos. Abra a lista de downloads do Safari, toque no arquivo e use Compartilhar → Salvar Vídeo para colocá-lo no rolo da câmera.",
   },
   {
     q: "Funciona no iPhone e no Android?",
@@ -300,9 +300,8 @@ export default function PTTwitterVideoDownloaderPage() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
+                  className="rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition before:mr-1.5 before:text-ink/40 before:content-['↗'] hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
                 >
-                  <span className="text-ink/40">↗ </span>
                   {item.label}
                 </Link>
               ))}

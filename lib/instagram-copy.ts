@@ -169,10 +169,10 @@ export const IG_PT: InstagramCopy = {
   ogLocale: "pt_BR",
   path: "/pt/instagram-reels-downloader/",
   homePath: "/pt/",
-  title: "Baixar Video do Instagram – Reels e Stories em MP4, Sem App",
+  title: "Baixar Vídeo do Instagram – Reels e Stories em MP4, Sem App",
   description:
-    "Baixe Reels e Stories do Instagram em MP4 com o som original – cole um link instagram.com/reel/… ou instagram.com/stories/…. Sem app, sem cadastro, sem marca d'água adicionada.",
-  appName: "Savemov – Baixar Video do Instagram",
+    "Baixe Reels e Stories do Instagram em MP4 com o som original – cole um link do Reel ou da Story. Sem app, sem cadastro, sem marca d'água nossa.",
+  appName: "Savemov – Baixar Vídeo do Instagram",
   featureList: [
     "Baixar Reels do Instagram",
     "Salvar Stories do Instagram",
@@ -190,7 +190,7 @@ export const IG_PT: InstagramCopy = {
   formButton: "Baixar MP4",
   helper: "Só posts e Stories públicos. Nunca pedimos login do Instagram.",
   home: "Início",
-  crumb: "Baixar Video do Instagram",
+  crumb: "Baixar Vídeo do Instagram",
   badges: [
     { t: "Sem app nem APK", d: "Roda no navegador que você já usa." },
     { t: "Som original mantido", d: "O áudio do post vem junto no arquivo." },
@@ -284,7 +284,7 @@ export const IG_ES: InstagramCopy = {
   homePath: "/es/",
   title: "Descargar Videos de Instagram – Reels en MP4, Sin Marca ni App",
   description:
-    "Descarga Reels y vídeos de Instagram en MP4 con el audio original – pega un enlace instagram.com/reel/… o instagram.com/p/…. Sin app, sin registro, sin marca de agua añadida.",
+    "Descarga Reels y Stories de Instagram en MP4 con el audio original – pega el enlace del Reel. Sin app, sin registro y sin marca añadida.",
   appName: "Savemov – Descargar Videos de Instagram",
   featureList: [
     "Descargar Reels de Instagram",

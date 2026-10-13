@@ -105,7 +105,7 @@ export const TUMBLR: LightCopy = {
   platform: "Tumblr",
   title: "Tumblr Video Downloader – Save Videos and GIFs as MP4",
   description:
-    "Tumblr already stores its GIFs as looping MP4 files, so there is nothing to convert. Paste a public tumblr.com link and get back the same MP4, with the sound it carries.",
+    "Tumblr stores its GIFs as looping MP4, so there is nothing to convert. Paste a public tumblr.com link and get back that same MP4.",
   eyebrow: "No app · No sign-up · Nothing re-encoded",
   h1: "Download Tumblr Videos and GIFs From Any Public Post",
   h2: "Free online Tumblr downloader – paste a tumblr.com/post/… or tumblr.com/username/… link and get back the MP4 the page is already serving.",
@@ -141,7 +141,7 @@ export const OKRU: LightCopy = {
   platform: "OK.ru",
   title: "OK.ru Video Downloader – Save Odnoklassniki Videos as MP4",
   description:
-    "Paste a public ok.ru/video/… address. OK serves its video in several versions instead of one file, and a link with nothing a logged-out visitor can read comes back empty. No app, no sign-in.",
+    "OK.ru serves several versions instead of one file. Paste a public ok.ru/video/… link that already plays logged out and get the MP4.",
   eyebrow: "No app · No sign-up · No account needed",
   h1: "Download OK.ru (Odnoklassniki) Videos From Any Public Link",
   h2: "Free online OK downloader – paste an ok.ru/video/… link only when that page already plays without a login.",
@@ -177,7 +177,7 @@ export const LOOM: LightCopy = {
   platform: "Loom",
   title: "Loom Downloader – Download Loom Videos as MP4 Online",
   description:
-    "Loom's own download step lives in the recorder's library and only appears when they enable Downloads. Paste a public loom.com/share/… link here and get back the MP4 the recording was published as.",
+    "Loom's download step sits in the recorder's library, behind a Downloads toggle. Paste a public loom.com/share/… link and get the MP4.",
   eyebrow: "No app · No extension · No workspace needed",
   h1: "Download Loom Videos Without Touching Your Account",
   h2: "Free Loom video downloader online – paste a loom.com/share/… link and get back the MP4 the recording was published as.",
@@ -214,7 +214,7 @@ export const STREAMABLE: LightCopy = {
   platform: "Streamable",
   title: "Streamable Downloader – Save Videos as MP4 Before They Expire",
   description:
-    "Streamable only shows its download step to the person who uploaded a video. Paste a public streamable.com link while it still plays and get back the MP4 with its sound – free accounts expire at 90 days.",
+    "Streamable shows its download step only to the uploader. Paste a public streamable.com link while it still plays and get the MP4 with sound.",
   eyebrow: "No app · No sign-up · Grab it before it ages out",
   h1: "Download Streamable Videos From Any Public Link",
   h2: "Free Streamable video downloader online – paste a streamable.com/… link and get back the MP4 still being served.",
@@ -233,7 +233,6 @@ export const STREAMABLE: LightCopy = {
   ],
   q: [
     { q: "The Streamable page says the video is gone – can you still get it?", a: "No, and a tool that promises otherwise is padding its own results page. Free uploads are deleted after 90 days and Streamable says they cannot be recovered, so there is nothing left to read. This is exactly why people save the file the week they upload it." },
-    { q: "Why is there no download button under this video?", a: "Because that step belongs to whoever uploaded it, and it only reaches viewers when downloading is enabled on the video. The file is still being handed to the player, and that is what this page takes." },
     { q: "Do I need a Streamable account to use this?", a: "No. No sign-up, no app, no extension – one link, one request. Savemov does not keep the file." },
   ],
   iphoneQ: "How do I save a Streamable video to my iPhone camera roll?",
@@ -251,7 +250,7 @@ export const RUTUBE: LightCopy = {
   platform: "Rutube",
   title: "Rutube Video Downloader – Save Public Videos as MP4",
   description:
-    "Rutube serves most of its catalogue to a player rather than a file, and the download step appears on only some uploads. Paste a public rutube.ru/video/… link and get back the video it is playing.",
+    "Rutube shows a download step on only some videos. Paste a public rutube.ru/video/… link that plays logged out and get the file.",
   eyebrow: "No app · No sign-up · No account needed",
   h1: "Download Rutube Videos From Any Public Link",
   h2: "Free online Rutube downloader – paste a rutube.ru/video/… link and get back the file it is already playing.",
@@ -270,7 +269,7 @@ export const RUTUBE: LightCopy = {
   ],
   q: [
     { q: "Can I download any video from Rutube?", a: "Only the ones that play for a visitor who is not logged in. Paste the link into a private window first: if Rutube shows a sign-in prompt or an age check there, the video is not public and no honest tool can fetch it." },
-    { q: "Do I need the Rutube app, APK or a Russian account?", a: "Neither of them. One link in the browser you already have – nothing installed, no login, no region setting to change." },
+    { q: "Do I need the Rutube app, APK or a Russian account?", a: "None of them. One link in the browser you already have – nothing installed, no login, no region setting to change." },
     { q: "Will the saved file have a watermark?", a: "Nothing is added by us. A channel logo or a caption already burned into the frames belongs to the upload and stays, because scraping it off would mean re-encoding the video into a worse copy than the one you watched." },
   ],
   iphoneQ: "How do I save a Rutube video to my iPhone camera roll?",
@@ -287,7 +286,7 @@ export const BLUESKY: LightCopy = {
   platform: "Bluesky",
   title: "Bluesky Video Downloader – Save Public Videos as MP4",
   description:
-    "Bluesky hands out a link to a post, never the file, and has no save step for a video somebody else posted. Paste a bsky.app link here and get back the video the feed is playing.",
+    "Bluesky has no save step for a video somebody else posted. Paste a public bsky.app link and get back the file your feed is playing.",
   eyebrow: "No app · No sign-in · One link, one file",
   h1: "Download Bluesky Videos From Any Public Post",
   h2: "Free online Bluesky downloader – paste a bsky.app link and get back the video the timeline is already playing.",

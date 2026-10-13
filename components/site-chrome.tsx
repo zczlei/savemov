@@ -14,6 +14,7 @@ const CHROME = {
     platforms: "Platforms",
     menu: "Menu",
     downloaders: "Downloaders",
+    alsoEnglish: "Also in English",
     quick: "Quick links",
     home: "Home",
     bookmark: "Download with Savemov",
@@ -23,6 +24,7 @@ const CHROME = {
     platforms: "Plataformas",
     menu: "Menu",
     downloaders: "Baixadores",
+    alsoEnglish: "Também em inglês",
     quick: "Atalhos",
     home: "Início",
     bookmark: "Baixar com Savemov",
@@ -32,6 +34,7 @@ const CHROME = {
     platforms: "Plataformas",
     menu: "Menú",
     downloaders: "Descargadores",
+    alsoEnglish: "También en inglés",
     quick: "Enlaces",
     home: "Inicio",
     bookmark: "Descargar con Savemov",
@@ -50,6 +53,15 @@ function chrome(lang: string) {
   return CHROME.en;
 }
 
+function splitPlatforms(lang: string) {
+  const all = platformsFor(lang);
+  if (lang === "en") return { local: all, english: [] };
+  return {
+    local: all.filter((platform) => platform.href),
+    english: all.filter((platform) => !platform.href),
+  };
+}
+
 function PlatformLinks({
   lang,
   className,
@@ -57,12 +69,29 @@ function PlatformLinks({
   lang: string;
   className: string;
 }) {
+  const { local, english } = splitPlatforms(lang);
+  const text = chrome(lang);
   return (
     <>
-      {platformsFor(lang).map((platform) => (
+      {local.map((platform) => (
         <Link
           key={platform.slug}
           href={platform.href ?? `/${platform.slug}/`}
+          title={platform.anchor}
+          className={className}
+        >
+          <img src={PLATFORM_ICONS[platform.slug]} alt="" width={20} height={20} className="size-5 object-contain" />
+          {platform.label}
+        </Link>
+      ))}
+      {english.length > 0 ? (
+        <p className="px-2 pb-1 pt-3 text-xs font-semibold uppercase tracking-wide text-ink/40">{text.alsoEnglish}</p>
+      ) : null}
+      {english.map((platform) => (
+        <Link
+          key={platform.slug}
+          href={`/${platform.slug}/`}
+          hrefLang="en"
           title={platform.anchor}
           className={className}
         >
@@ -202,6 +231,7 @@ export function SiteHeader({
 
 export function SiteFooter({ c }: { c: Pick<Copy, "lang" | "path" | "legal" | "footerNote"> }) {
   const text = chrome(c.lang);
+  const platforms = splitPlatforms(c.lang);
   const links = [
     { href: c.path, label: text.home },
     { href: "/terms/", label: c.legal.terms },
@@ -223,7 +253,7 @@ export function SiteFooter({ c }: { c: Pick<Copy, "lang" | "path" | "legal" | "f
         <div>
           <h2 className="text-sm font-semibold text-ink">{text.downloaders}</h2>
           <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-sm">
-            {platformsFor(c.lang).map((platform) => (
+            {platforms.local.map((platform) => (
               <li key={platform.slug}>
                 <Link
                   href={platform.href ?? `/${platform.slug}/`}
@@ -231,6 +261,21 @@ export function SiteFooter({ c }: { c: Pick<Copy, "lang" | "path" | "legal" | "f
                   className="text-ink/70 hover:text-ink"
                 >
                   {c.lang === "es" ? `Descargar ${platform.label}` : c.lang === "pt-BR" || c.lang === "pt" ? `Baixar ${platform.label}` : `${platform.label} Downloader`}
+                </Link>
+              </li>
+            ))}
+            {platforms.english.length > 0 ? (
+              <li className="col-span-2 pt-3 text-xs font-semibold uppercase tracking-wide text-ink/40">{text.alsoEnglish}</li>
+            ) : null}
+            {platforms.english.map((platform) => (
+              <li key={platform.slug}>
+                <Link
+                  href={`/${platform.slug}/`}
+                  hrefLang="en"
+                  title={platform.anchor}
+                  className="text-ink/70 hover:text-ink"
+                >
+                  {c.lang === "es" ? `Descargar ${platform.label}` : `Baixar ${platform.label}`}
                 </Link>
               </li>
             ))}

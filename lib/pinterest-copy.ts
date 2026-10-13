@@ -268,7 +268,7 @@ export const PIN_PT: PinterestCopy = {
   relatedTitle: "Outros baixadores",
   related: [
     { href: "/pt/tiktok-downloader/", label: "Baixar Vídeo do TikTok" },
-    { href: "/pt/instagram-reels-downloader/", label: "Baixar Video do Instagram" },
+    { href: "/pt/instagram-reels-downloader/", label: "Baixar Vídeo do Instagram" },
     { href: "/pt/facebook-video-downloader/", label: "Baixar Vídeo do Facebook" },
     { href: "/pt/reddit-video-downloader/", label: "Baixar Vídeo do Reddit" },
   ],
@@ -283,7 +283,7 @@ export const PIN_ES: PinterestCopy = {
   homePath: "/es/",
   title: "Descargar Videos de Pinterest – Pinterest Downloader en MP4",
   description:
-    "Descarga vídeos de Pinterest en MP4 con su audio original – pega el enlace del pin (pin.it/… o pinterest.com/pin/…). Sin app, sin registro, sin marca de agua añadida.",
+    "Descarga vídeos de Pinterest en MP4 con su audio original – pega el enlace del pin. Sin app, sin registro, sin marca de agua añadida.",
   appName: "Savemov Descargador de Videos de Pinterest",
   featureList: [
     "Descargar videos de Pinterest",

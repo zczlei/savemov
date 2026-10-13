@@ -96,7 +96,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Como baixar vídeo do Facebook no iPhone?",
-    a: "Toque em Baixar MP4, abra o arquivo resultante e use Compartilhar → Salvar em Arquivos para tirá-lo do navegador. No Android o arquivo cai direto na pasta Downloads.",
+    a: "Toque em Baixar MP4. No Android o arquivo cai direto na pasta Downloads. No iPhone ele cai primeiro no app Arquivos, não direto em Fotos. Abra a lista de downloads do Safari, toque no arquivo e use Compartilhar → Salvar Vídeo para colocá-lo no rolo da câmera.",
   },
   {
     q: "Consigo baixar em 1080p, 2K ou 4K?",
@@ -323,9 +323,8 @@ export default function PtFacebookPage() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
+                  className="rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition before:mr-1.5 before:text-ink/40 before:content-['↗'] hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
                 >
-                  <span className="text-ink/40">↗ </span>
                   {item.label}
                 </Link>
               ))}

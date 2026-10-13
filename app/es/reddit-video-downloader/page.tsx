@@ -70,7 +70,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "¿Cómo guardar un vídeo de Reddit en el iPhone?",
-    a: "Pulsa Descargar MP4, abre el resultado y usa Compartir → Guardar en Archivos para que salga del navegador. En Android el archivo va directo a la carpeta de Descargas.",
+    a: "Pulsa Descargar MP4. En Android el archivo va directo a la carpeta de Descargas. En iPhone llega primero a la app Archivos, no directo a Fotos. Abre la lista de descargas de Safari, toca el archivo y pulsa Compartir → Guardar vídeo para pasarlo al carrete.",
   },
   {
     q: "¿Puedo bajarlo en 1080p o 4K?",
@@ -284,9 +284,8 @@ export default function EsRedditPage() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
+                  className="rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition before:mr-1.5 before:text-ink/40 before:content-['↗'] hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
                 >
-                  <span className="text-ink/40">↗ </span>
                   {item.label}
                 </Link>
               ))}

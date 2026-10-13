@@ -3,12 +3,13 @@ import { SITE } from "@/lib/site";
 
 export const dynamic = "force-static";
 
-const DATE = new Date().toISOString().slice(0, 10);
+/** Change a page's date only when that page's content changes. The build clock must not refresh every URL. */
+const PUBLISHED = "2026-10-13";
 
-function entry(path: string, priority: number, changefreq = "weekly") {
+function entry(path: string, priority: number, changefreq = "weekly", lastmod = PUBLISHED) {
   return `  <url>
     <loc>${SITE}${path}</loc>
-    <lastmod>${DATE}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority.toFixed(1)}</priority>
   </url>`;

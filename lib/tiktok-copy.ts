@@ -283,7 +283,7 @@ export const TIKTOK_ES: TiktokCopy = {
   homePath: "/es/",
   title: "TikTok Downloader – Descargar Videos de TikTok en MP4",
   description:
-    "Descarga videos de TikTok en MP4 con el sonido original – pega el enlace de tiktok.com, vm.tiktok.com o vt.tiktok.com. Sin app, sin registro, sin marca de agua añadida.",
+    "Descarga videos de TikTok en MP4 con el sonido original: pega el enlace de tiktok.com o un enlace corto. Sin app, sin registro y sin marca añadida.",
   appName: "Savemov TikTok Downloader",
   featureList: [
     "Descargar videos de TikTok",

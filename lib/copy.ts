@@ -170,7 +170,7 @@ export const EN: Copy = {
     },
     {
       q: "Does it work on iPhone and Android?",
-      a: "Yes. On Android the file lands in your Downloads folder. On iPhone, tap Share → Save to Files so it leaves the browser and stays on your phone.",
+      a: "Yes. On Android the file lands in your Downloads folder. On iPhone it lands in the Files app, not straight in Photos. Open Safari's download list, tap the file, press Share → Save Video, and it is in your camera roll.",
     },
     {
       q: "Is it free? How many videos can I save?",
@@ -313,7 +313,7 @@ export const PT: Copy = {
     },
     {
       q: "Funciona no celular Android e iPhone?",
-      a: "Sim. No Android o arquivo vai para a pasta Downloads. No iPhone, toque em Compartilhar → Salvar em Arquivos para tirá-lo do navegador.",
+      a: "Sim. No Android o arquivo vai para a pasta Downloads. No iPhone ele cai primeiro no app Arquivos, não direto em Fotos. Abra a lista de downloads do Safari, toque no arquivo e use Compartilhar → Salvar Vídeo para colocá-lo no rolo da câmera.",
     },
     {
       q: "Qual a qualidade do vídeo baixado?",
@@ -335,7 +335,7 @@ export const PT: Copy = {
     { slug: SLUG.tw, href: "/pt/twitter-video-downloader/", label: "Twitter/X", anchor: "Baixar Vídeo do Twitter (X)" },
     { slug: SLUG.rd, href: "/pt/reddit-video-downloader/", label: "Reddit", anchor: "Baixar Vídeo do Reddit" },
     { slug: SLUG.fb, href: "/pt/facebook-video-downloader/", label: "Facebook", anchor: "Baixar Vídeo do Facebook" },
-    { slug: SLUG.ig, href: "/pt/instagram-reels-downloader/", label: "Instagram", anchor: "Baixar Video do Instagram" },
+    { slug: SLUG.ig, href: "/pt/instagram-reels-downloader/", label: "Instagram", anchor: "Baixar Vídeo do Instagram" },
     { slug: SLUG.pi, href: "/pt/pinterest-video-downloader/", label: "Pinterest", anchor: "Baixar Vídeo do Pinterest" },
     { slug: SLUG.bs, label: "Bluesky", anchor: "Bluesky Video Downloader" },
     { slug: SLUG.dm, label: "Dailymotion", anchor: "Dailymotion Video Downloader" },
@@ -387,7 +387,7 @@ export const ES: Copy = {
     another: "Descargar otro",
   },
   how: {
-    h2: "¿Cómo descargar videos en línea?",
+    h2: "¿Cómo descargar videos online?",
     steps: [
       { t: "Copia el enlace", d: "Abre el video público en el navegador y copia la URL, o usa Compartir → Copiar enlace en la app." },
       { t: "Pégalo arriba", d: "Leemos la página y localizamos el archivo que está reproduciendo." },
@@ -436,7 +436,7 @@ export const ES: Copy = {
     },
     {
       q: "¿Funciona en iPhone y Android?",
-      a: "Sí. En Android el archivo va a la carpeta Descargas. En iPhone, toca Compartir → «Salvar en Archivos» para sacarlo del navegador.",
+      a: "Sí. En Android el archivo va a la carpeta Descargas. En iPhone llega primero a la app Archivos, no directo a Fotos. Abre la lista de descargas de Safari, toca el archivo y pulsa Compartir → Guardar vídeo para pasarlo al carrete.",
     },
     {
       q: "¿Qué formato y calidad obtengo?",

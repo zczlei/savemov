@@ -319,9 +319,8 @@ export default function FacebookVideoDownloaderPage() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
+                  className="rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition before:mr-1.5 before:text-ink/40 before:content-['↗'] hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
                 >
-                  <span className="text-ink/40">↗ </span>
                   {item.label}
                 </Link>
               ))}
