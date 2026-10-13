@@ -87,6 +87,7 @@ const FAQ: { q: string; a: string }[] = [
 
 const RELATED = [
   { href: "/", label: "Download Video from Link or URL" },
+  { href: "/reddit-video-downloader/", label: "Reddit Video Downloader" },
   { href: "/instagram-reels-downloader/", label: "Instagram Reels Downloader" },
   { href: "/tiktok-downloader/", label: "TikTok Downloader" },
   { href: "/facebook-video-downloader/", label: "Facebook Video Downloader" },

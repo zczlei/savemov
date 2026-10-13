@@ -4,6 +4,19 @@ import JsonLd from "@/components/json-ld";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { buildJsonLd, type Copy } from "@/lib/copy";
 
+const PLATFORM_ICONS: Record<string, string> = {
+  "pinterest-video-downloader": "/platforms/pinterest.png",
+  "tiktok-downloader": "/platforms/tiktok.png",
+  "instagram-reels-downloader": "/platforms/instagram.png",
+  "facebook-video-downloader": "/platforms/facebook.png",
+  "snapchat-video-downloader": "/platforms/snapchat.png",
+  "streamable-video-downloader": "/platforms/streamable.png",
+  "vk-video-downloader": "/platforms/vk.png",
+  "okru-video-downloader": "/platforms/okru.png",
+  "dailymotion-video-downloader": "/platforms/dailymotion.png",
+  "loom-video-downloader": "/platforms/loom.png",
+};
+
 function RichText({ text, emphasis }: { text: string; emphasis?: string }) {
   if (!emphasis) return text;
   const index = text.indexOf(emphasis);
@@ -54,7 +67,7 @@ export default function HomePage({ c }: { c: Copy }) {
             {c.platformLead}{" "}
             {heroPlatforms.map((platform, index) => (
               <span key={platform.slug}>
-                <Link href={`/${platform.slug}/`} className="text-white underline decoration-white/25 underline-offset-4 hover:decoration-white">
+                <Link href={platform.href ?? `/${platform.slug}/`} className="text-white underline decoration-white/25 underline-offset-4 hover:decoration-white">
                   {platform.label}
                 </Link>
                 {index < heroPlatforms.length - 1 ? " · " : ""}
@@ -76,17 +89,42 @@ export default function HomePage({ c }: { c: Copy }) {
         </section>
 
         <section className="mx-auto max-w-5xl px-4 py-14">
-          <h2 className="text-2xl font-bold tracking-tight">{c.how.h2}</h2>
-          {c.how.intro ? <p className="mt-4 max-w-3xl text-sm leading-7 text-ink/70">{c.how.intro}</p> : null}
-          <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {c.how.steps.map((step, index) => (
-              <li key={step.t} className="rounded-3xl border border-line bg-white p-5">
-                <span className="grid size-8 place-items-center rounded-full bg-sand text-sm font-bold text-pine">{index + 1}</span>
-                <h3 className="mt-4 font-semibold">{step.t}</h3>
-                <p className="mt-2 text-sm leading-6 text-ink/65">{step.d}</p>
-              </li>
+          <h2 className="text-2xl font-bold tracking-tight">{c.platformsH2}</h2>
+          <div className="mt-6 grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
+            {c.platforms.map((platform) => (
+              <Link
+                key={platform.slug}
+                href={platform.href ?? `/${platform.slug}/`}
+                title={platform.anchor}
+                className="group flex h-full flex-col items-center gap-2.5 rounded-2xl border border-line bg-white px-2 py-4 text-center transition hover:-translate-y-1 hover:border-pine/30 hover:shadow-md"
+              >
+                <img
+                  src={PLATFORM_ICONS[platform.slug]}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="size-10 object-contain"
+                />
+                <span className="text-sm font-semibold leading-5 group-hover:text-pine">{platform.label}</span>
+              </Link>
             ))}
-          </ol>
+          </div>
+        </section>
+
+        <section className="border-t border-line/80">
+          <div className="mx-auto max-w-5xl px-4 py-14">
+            <h2 className="text-2xl font-bold tracking-tight">{c.how.h2}</h2>
+            {c.how.intro ? <p className="mt-4 max-w-3xl text-sm leading-7 text-ink/70">{c.how.intro}</p> : null}
+            <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {c.how.steps.map((step, index) => (
+                <li key={step.t} className="rounded-3xl border border-line bg-white p-5">
+                  <span className="grid size-8 place-items-center rounded-full bg-sand text-sm font-bold text-pine">{index + 1}</span>
+                  <h3 className="mt-4 font-semibold">{step.t}</h3>
+                  <p className="mt-2 text-sm leading-6 text-ink/65">{step.d}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </section>
 
         {c.format ? (
@@ -109,25 +147,6 @@ export default function HomePage({ c }: { c: Copy }) {
               </p>
             </div>
             <p className="rounded-3xl bg-white p-6 text-sm leading-7 text-ink/70 shadow-sm">{c.what.limits}</p>
-          </div>
-        </section>
-
-        <section className="border-t border-line/80">
-          <div className="mx-auto max-w-5xl px-4 py-14">
-            <h2 className="text-2xl font-bold tracking-tight">{c.platformsH2}</h2>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {c.platforms.map((platform) => (
-                <Link
-                  key={platform.slug}
-                  href={`/${platform.slug}/`}
-                  className="group rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
-                >
-                  <span className="text-ink/40">↗ </span>
-                  <span className="group-hover:text-pine">{platform.anchor}</span>
-                  {platform.note ? <span className="mt-1 block font-normal leading-6 text-ink/60">{platform.note}</span> : null}
-                </Link>
-              ))}
-            </div>
           </div>
         </section>
 

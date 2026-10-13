@@ -85,7 +85,10 @@ const FAQ: { q: string; a: string }[] = [
   },
 ];
 
-const RELATED = [{ href: "/es/", label: "Descargar Videos Online por Link" }];
+const RELATED = [
+  { href: "/es/", label: "Descargar Videos Online por Link" },
+  { href: "/es/facebook-video-downloader/", label: "Descargar Videos de Facebook" },
+];
 
 const FORM: FormCopy = {
   ...ES.form,

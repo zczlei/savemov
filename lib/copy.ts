@@ -40,7 +40,7 @@ export type Copy = {
   faqs: { q: string; a: string }[];
   badges?: string[];
   platformsH2: string;
-  platforms: { slug: string; label: string; anchor: string; note?: string }[];
+  platforms: { slug: string; label: string; anchor: string; note?: string; href?: string }[];
   footerNote: string;
   legal: { terms: string; privacy: string; copyright: string; contact: string };
   skip: string;
@@ -312,7 +312,7 @@ export const PT: Copy = {
     { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader", note: "Salve pins em vídeo de qualquer board público." },
     { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader", note: "Cole o link de compartilhar e fique com o arquivo." },
     { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader", note: "Reels e vídeos de perfis públicos." },
-    { slug: SLUG.fb, label: "Facebook", anchor: "Facebook Video Downloader", note: "Vídeos e Reels públicos de páginas que você consegue abrir." },
+    { slug: SLUG.fb, href: "/pt/facebook-video-downloader/", label: "Facebook", anchor: "Baixar Vídeo do Facebook", note: "Vídeos e Reels públicos de páginas que você consegue abrir." },
     { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader", note: "Clips do Spotlight a partir de um link." },
     { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
     { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
@@ -434,7 +434,7 @@ export const ES: Copy = {
     { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader", note: "Guarda pines en vídeo de cualquier tablero público." },
     { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader", note: "Pega el enlace para quedarte con el archivo." },
     { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader", note: "Reels y vídeos de perfiles públicos." },
-    { slug: SLUG.fb, label: "Facebook", anchor: "Facebook Video Downloader", note: "Vídeos y Reels públicos de páginas que puedas abrir." },
+    { slug: SLUG.fb, href: "/es/facebook-video-downloader/", label: "Facebook", anchor: "Descargar Videos de Facebook", note: "Vídeos y Reels públicos de páginas que puedas abrir." },
     { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader", note: "Clips de Spotlight desde un enlace compartido." },
     { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
     { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },

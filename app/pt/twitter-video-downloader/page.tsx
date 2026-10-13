@@ -85,7 +85,10 @@ const FAQ: { q: string; a: string }[] = [
   },
 ];
 
-const RELATED = [{ href: "/pt/", label: "Baixar Vídeo pela URL ou Link" }];
+const RELATED = [
+  { href: "/pt/", label: "Baixar Vídeo pela URL ou Link" },
+  { href: "/pt/facebook-video-downloader/", label: "Baixar Vídeo do Facebook" },
+];
 
 const FORM: FormCopy = {
   ...PT.form,
