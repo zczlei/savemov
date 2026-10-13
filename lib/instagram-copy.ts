@@ -357,7 +357,7 @@ export const IG_ES: InstagramCopy = {
   },
   relatedTitle: "Otros descargadores",
   related: [
-    { href: "/es/tiktok-downloader/", label: "TikTok Downloader" },
+    { href: "/es/tiktok-downloader/", label: "Descargar Videos de TikTok" },
     { href: "/es/facebook-video-downloader/", label: "Descargar Videos de Facebook" },
     { href: "/es/twitter-video-downloader/", label: "Descargar Video de Twitter (X)" },
     { href: "/es/reddit-video-downloader/", label: "Descargar Videos de Reddit" },

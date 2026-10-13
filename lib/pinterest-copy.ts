@@ -170,7 +170,7 @@ export const PIN_PT: PinterestCopy = {
     "Sem app nem cadastro",
   ],
   eyebrow: "Sem app · Sem cadastro · Sem marca d'água nossa",
-  h1: "Baixar Vídeo do Pinterest por Link ou URL",
+  h1: "Baixar Vídeo do Pinterest",
   h2: "Baixador de Pinterest grátis – cole um link pin.it/… ou pinterest.com/pin/… e salve o MP4 com o som original.",
   formLabel: "Link do Pin do Pinterest",
   formPlaceholder: "Cole o link – pin.it/…, pinterest.com/pin/… ou pinterest.com/usuario/pin/…",
@@ -372,7 +372,7 @@ export const PIN_ES: PinterestCopy = {
   },
   relatedTitle: "Otros descargadores",
   related: [
-    { href: "/es/tiktok-downloader/", label: "TikTok Downloader" },
+    { href: "/es/tiktok-downloader/", label: "Descargar Videos de TikTok" },
     { href: "/es/instagram-reels-downloader/", label: "Descargar Videos de Instagram" },
     { href: "/es/facebook-video-downloader/", label: "Descargar Videos de Facebook" },
     { href: "/es/reddit-video-downloader/", label: "Descargar Videos de Reddit" },

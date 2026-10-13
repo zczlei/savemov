@@ -1,5 +1,5 @@
 /** English platform pages that share one downloader layout.
- * Twitter, Reddit, Facebook, TikTok, Instagram and Pinterest have their own pages and are not listed here. */
+ * Twitter, Reddit, Facebook, TikTok, Instagram, Pinterest and Snapchat have their own pages and are not listed here. */
 
 export type SimplePlatform = {
   slug: string;
@@ -32,11 +32,6 @@ export const SIMPLE_PLATFORMS: SimplePlatform[] = [
     slug: "rutube-video-downloader",
     name: "Rutube",
     scope: "Public Rutube videos.",
-  },
-  {
-    slug: "snapchat-video-downloader",
-    name: "Snapchat",
-    scope: "Spotlight clips and other Snapchat links you can open without logging in.",
   },
   {
     slug: "streamable-video-downloader",
