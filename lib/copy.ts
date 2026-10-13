@@ -50,7 +50,6 @@ export type Copy = {
 };
 
 const SLUG = {
-  tg: "telegram-video-downloader",
   tt: "tiktok-downloader",
   fb: "facebook-video-downloader",
   ig: "instagram-reels-downloader",
@@ -70,7 +69,7 @@ export const EN: Copy = {
   title: "Download Video from Link or URL – Free Online Video Downloader",
   desc:
     "Download videos from any public link or URL as MP4 – free, no app, no sign-up. " +
-    "Works with TikTok, Instagram, Facebook, Telegram and more.",
+    "Works with TikTok, Instagram, Facebook and more.",
   h1: "Download Videos from Any Link or URL",
   h2: "Free online video downloader – paste a link, get an MP4 in seconds",
   trust: "No app · No sign-up · MP4 · Free",
@@ -79,7 +78,7 @@ export const EN: Copy = {
   platformTail: "and any public video link",
   form: {
     label: "URL or link to the video",
-    placeholder: "Paste a TikTok, Instagram, Facebook, Pinterest or Telegram link",
+    placeholder: "Paste a TikTok, Instagram, Facebook or Pinterest link",
     button: "Download MP4",
     paste: "Paste",
     clear: "Clear",
@@ -96,7 +95,7 @@ export const EN: Copy = {
   how: {
     h2: "How to download a video from a link",
     intro:
-      "To download video from link pages such as TikTok, Instagram or Telegram, paste the share link in the box above — Savemov reads the page and prepares the file.",
+      "To download video from link pages such as TikTok, Instagram or Facebook, paste the share link in the box above — Savemov reads the page and prepares the file.",
     steps: [
       { t: "Copy the link", d: "Open the public video in your browser and copy its URL – or use Share → Copy link in the app." },
       { t: "Paste it above", d: "Savemov reads the page and locates the video file that page is streaming." },
@@ -138,7 +137,7 @@ export const EN: Copy = {
     },
     {
       q: "Can I paste any kind of link?",
-      a: "Yes: the page URL of a public video, a share link, or a link you received in a messaging app such as Telegram. If the link opens the video in your browser without a login, we can usually save it. A link that already points straight at an .mp4 file just plays in the browser – use your device's own save option for that one. Any public address works: use the video URL downloader to fetch the file behind the page instead of screen-recording it.",
+      a: "Yes: the page URL of a public video, a share link, or a link you received in a messaging app. If the link opens the video in your browser without a login, we can usually save it. A link that already points straight at an .mp4 file just plays in the browser – use your device's own save option for that one. Any public address works: use the video URL downloader to fetch the file behind the page instead of screen-recording it.",
     },
     {
       q: "Is a link the same as a URL?",
@@ -146,7 +145,7 @@ export const EN: Copy = {
     },
     {
       q: "Which sites are supported?",
-      a: "Any public page that embeds a playable video, including Pinterest, TikTok, Instagram Reels, Facebook, Telegram, Snapchat, VK, OK, Dailymotion, Streamable and Loom. Pages that require a login, private posts and DRM-protected streams are not supported.",
+      a: "Any public page that embeds a playable video, including Pinterest, TikTok, Instagram Reels, Facebook, Snapchat, VK, OK, Dailymotion, Streamable and Loom. Pages that require a login, private posts and DRM-protected streams are not supported.",
     },
     {
       q: "Can I download a full playlist?",
@@ -174,7 +173,7 @@ export const EN: Copy = {
     },
     {
       q: "Can I download WhatsApp status videos?",
-      a: "No. WhatsApp Status has no public link a website can read, so no online downloader – including this one – can save it. Anything that does give you a public link (TikTok, Instagram, Facebook, Telegram, Pinterest) works above.",
+      a: "No. WhatsApp Status has no public link a website can read, so no online downloader – including this one – can save it. Anything that does give you a public link (TikTok, Instagram, Facebook, Pinterest) works above.",
     },
   ],
   badges: ["MP4", "Source quality", "No sign-up", "iPhone & Android"],
@@ -184,7 +183,6 @@ export const EN: Copy = {
     { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader", note: "Paste the share link to keep the video file." },
     { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader", note: "Reels and video posts from public profiles." },
     { slug: SLUG.fb, label: "Facebook", anchor: "Facebook Video Downloader", note: "Public videos and Reels from pages and groups you can open." },
-    { slug: SLUG.tg, label: "Telegram", anchor: "Telegram Video Downloader", note: "Videos from public channels and t.me links." },
     { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader", note: "Spotlight clips from a shared link." },
     { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
     { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
@@ -212,7 +210,7 @@ export const PT: Copy = {
   title: "Baixar Vídeo pela URL ou Link – Vídeos Online Grátis sem App",
   desc:
     "Baixe vídeos pela URL ou por link em MP4, grátis e sem aplicativo. Funciona com " +
-    "TikTok, Instagram, Facebook, Telegram e qualquer link público de vídeo.",
+    "TikTok, Instagram, Facebook e qualquer link público de vídeo.",
   h1: "Baixar Vídeo pela URL ou por Link",
   h2: "Cole o link e baixe o vídeo em MP4 – online, grátis e sem aplicativo",
   trust: "Sem aplicativo · Sem cadastro · MP4 · Grátis",
@@ -305,7 +303,7 @@ export const PT: Copy = {
     },
     {
       q: "Posso baixar vídeos do status do WhatsApp?",
-      a: "Não. O status do WhatsApp não tem link público que um site consiga ler, então nenhum downloader online — incluindo este — consegue salvá-lo. Links públicos de TikTok, Instagram, Facebook, Telegram e Pinterest funcionam acima.",
+      a: "Não. O status do WhatsApp não tem link público que um site consiga ler, então nenhum downloader online — incluindo este — consegue salvá-lo. Links públicos de TikTok, Instagram, Facebook e Pinterest funcionam acima.",
     },
   ],
   badges: ["MP4", "Qualidade da origem", "Sem cadastro", "iPhone e Android"],
@@ -315,7 +313,6 @@ export const PT: Copy = {
     { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader", note: "Cole o link de compartilhar e fique com o arquivo." },
     { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader", note: "Reels e vídeos de perfis públicos." },
     { slug: SLUG.fb, label: "Facebook", anchor: "Facebook Video Downloader", note: "Vídeos e Reels públicos de páginas que você consegue abrir." },
-    { slug: SLUG.tg, label: "Telegram", anchor: "Telegram Video Downloader", note: "Vídeos de canais públicos e links t.me." },
     { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader", note: "Clips do Spotlight a partir de um link." },
     { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
     { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
@@ -335,7 +332,7 @@ export const ES: Copy = {
   title: "Descargar Videos Online por Link – Gratis, Sin App | Savemov",
   desc:
     "Descarga videos por link o URL en MP4, gratis y sin instalar apps. Funciona con TikTok, " +
-    "Instagram, Facebook, Telegram y cualquier enlace público.",
+    "Instagram, Facebook y cualquier enlace público.",
   h1: "Descargar videos desde cualquier enlace o URL",
   h2: "Pega el link y descarga el video en MP4 – gratis, online y sin instalar apps",
   trust: "Sin app · Sin registro · MP4 · Gratis",
@@ -428,7 +425,7 @@ export const ES: Copy = {
     },
     {
       q: "¿Puedo descargar estados de WhatsApp?",
-      a: "No. Los estados de WhatsApp no tienen un enlace público que un sitio pueda leer, así que ningún descargador en línea — este incluido — puede guardarlos. Los enlaces públicos de TikTok, Instagram, Facebook, Telegram y Pinterest sí funcionan.",
+      a: "No. Los estados de WhatsApp no tienen un enlace público que un sitio pueda leer, así que ningún descargador en línea — este incluido — puede guardarlos. Los enlaces públicos de TikTok, Instagram, Facebook y Pinterest sí funcionan.",
     },
   ],
   badges: ["MP4", "Calidad de origen", "Sin registro", "iPhone y Android"],
@@ -438,7 +435,6 @@ export const ES: Copy = {
     { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader", note: "Pega el enlace para quedarte con el archivo." },
     { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader", note: "Reels y vídeos de perfiles públicos." },
     { slug: SLUG.fb, label: "Facebook", anchor: "Facebook Video Downloader", note: "Vídeos y Reels públicos de páginas que puedas abrir." },
-    { slug: SLUG.tg, label: "Telegram", anchor: "Telegram Video Downloader", note: "Vídeos de canales públicos y enlaces t.me." },
     { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader", note: "Clips de Spotlight desde un enlace compartido." },
     { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
     { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },

@@ -2,8 +2,19 @@ import Link from "next/link";
 import { Mark } from "@/components/mark";
 import { otherLanguages, type Copy } from "@/lib/copy";
 
-export function SiteHeader({ c, tone = "dark" }: { c: Pick<Copy, "lang" | "path">; tone?: "dark" | "light" }) {
+type LanguageLink = { code: string; short: string; label: string; href: string };
+
+export function SiteHeader({
+  c,
+  tone = "dark",
+  languages,
+}: {
+  c: Pick<Copy, "lang" | "path">;
+  tone?: "dark" | "light";
+  languages?: LanguageLink[];
+}) {
   const light = tone === "light";
+  const items = languages ?? otherLanguages(c.lang);
   return (
     <header className={light ? "border-b border-line bg-paper/90 backdrop-blur" : ""}>
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 py-4">
@@ -12,7 +23,7 @@ export function SiteHeader({ c, tone = "dark" }: { c: Pick<Copy, "lang" | "path"
           <span className={light ? "text-ink" : "text-white"}>Savemov</span>
         </Link>
         <nav className="flex items-center gap-1 text-sm sm:gap-2" aria-label={c.lang}>
-          {otherLanguages(c.lang).map((item) => (
+          {items.map((item) => (
             <Link
               key={item.code}
               hrefLang={item.code}

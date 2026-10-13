@@ -34,5 +34,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       alternates: { languages: { ...languages } },
     },
+    {
+      url: abs("/twitter-video-downloader/"),
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   ];
 }

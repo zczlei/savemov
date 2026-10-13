@@ -4,7 +4,6 @@ export const PLACEHOLDERS: Record<string, string> = {
   "instagram-reels-downloader": "Instagram Reels Downloader",
   "pinterest-video-downloader": "Pinterest Video Downloader",
   "facebook-video-downloader": "Facebook Video Downloader",
-  "telegram-video-downloader": "Telegram Video Downloader",
   "snapchat-video-downloader": "Snapchat Video Downloader",
   "dailymotion-video-downloader": "Dailymotion Video Downloader",
   "vk-video-downloader": "VK Video Downloader",
