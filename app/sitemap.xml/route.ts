@@ -42,6 +42,10 @@ function sitemapXml() {
     entry("/dailymotion-video-downloader/", 0.8),
     entry("/vk-video-downloader/", 0.8),
     ...SIMPLE_PLATFORMS.map((platform) => entry(`/${platform.slug}/`, 0.6)),
+    entry("/terms/", 0.3),
+    entry("/privacy/", 0.3),
+    entry("/copyright/", 0.3),
+    entry("/contact/", 0.3),
   ];
 
   return `<?xml version="1.0" encoding="UTF-8"?>

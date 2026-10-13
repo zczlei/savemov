@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Mark } from "@/components/mark";
 import { otherLanguages, platformsFor, type Copy } from "@/lib/copy";
 import { PLATFORM_ICONS } from "@/lib/platform-pages";
-import { BOOKMARKLET } from "@/lib/site";
+import { ANDROID_APP_URL, BOOKMARKLET } from "@/lib/site";
 
 type LanguageLink = { code: string; short: string; label: string; href: string };
 
@@ -19,6 +19,16 @@ const CHROME = {
     home: "Home",
     bookmark: "Download with Savemov",
     bookmarkHint: "Drag this to your bookmarks bar. On a public video page, click it and the link opens here.",
+    appBadge: "Also on Android",
+    appTitle: "Get the Savemov App for Android",
+    appBody:
+      "Prefer downloading on your phone? Get the free Savemov Android app to save videos on the go — auto-detects videos from the sites you browse and saves them straight to your gallery in HD.",
+    appButton: "Get it on Google Play",
+    appFeatures: [
+      "Auto-detects videos while you browse",
+      "One-tap downloads in HD quality",
+      "Completely free, no signup required",
+    ],
   },
   "pt-BR": {
     platforms: "Plataformas",
@@ -29,6 +39,16 @@ const CHROME = {
     home: "Início",
     bookmark: "Baixar com Savemov",
     bookmarkHint: "Arraste para a barra de favoritos. Numa página pública de vídeo, clique e o link abre aqui.",
+    appBadge: "Também no Android",
+    appTitle: "Baixe o app Savemov para Android",
+    appBody:
+      "Prefere baixar no celular? O app gratuito do Savemov salva vídeos em qualquer lugar — detecta os vídeos dos sites que você abre e guarda direto na galeria em HD.",
+    appButton: "Disponível no Google Play",
+    appFeatures: [
+      "Detecta vídeos enquanto você navega",
+      "Download em um toque, em HD",
+      "Grátis, sem cadastro",
+    ],
   },
   es: {
     platforms: "Plataformas",
@@ -39,6 +59,16 @@ const CHROME = {
     home: "Inicio",
     bookmark: "Descargar con Savemov",
     bookmarkHint: "Arrástralo a la barra de marcadores. En una página pública de vídeo, púlsalo y el enlace se abre aquí.",
+    appBadge: "También en Android",
+    appTitle: "Consigue la app de Savemov para Android",
+    appBody:
+      "¿Prefieres descargar en el móvil? La app gratuita de Savemov guarda vídeos donde estés: detecta los vídeos de los sitios que visitas y los guarda en la galería en HD.",
+    appButton: "Consíguela en Google Play",
+    appFeatures: [
+      "Detecta vídeos mientras navegas",
+      "Descarga en un toque, en HD",
+      "Gratis, sin registro",
+    ],
   },
 };
 
@@ -229,6 +259,81 @@ export function SiteHeader({
   );
 }
 
+function PlayMark() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="#4285F4" d="M3.2 20.6V3.4c0-.5.2-.9.5-1.2l.1.1 9.4 9.4-9.4 9.5-.1-.1c-.3-.2-.5-.6-.5-1.1z" />
+      <path fill="#34A853" d="m13.2 12.3 2.6 2.6-9.6 5.5c-.5.3-1.1.2-1.5-.1l8.5-8z" />
+      <path fill="#FBBC04" d="M18.7 9.6 15.8 8 13.2 11.7l2.6 2.6 3-1.7c.8-.5.8-1.5-.1-2z" />
+      <path fill="#EA4335" d="M6.2 3.6 15.8 8 13.2 11.7 4.3 2.8c.4-.4 1.1-.5 1.9-.2z" />
+    </svg>
+  );
+}
+
+function FeatureIcon({ index }: { index: number }) {
+  const common = { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.8, "aria-hidden": true as const };
+  if (index === 0) {
+    return (
+      <svg {...common}>
+        <rect x="3" y="6" width="18" height="12" rx="2" />
+        <path d="M10 9.5v5l4.5-2.5L10 9.5z" fill="currentColor" stroke="none" />
+      </svg>
+    );
+  }
+  if (index === 1) {
+    return (
+      <svg {...common}>
+        <path d="M13 3 5 14h6l-1 7 9-12h-6l0-6z" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+  return (
+    <svg {...common}>
+      <path d="M12 3v18M16.5 7.5c0-1.8-2-3-4.5-3s-4.5 1.2-4.5 3 2 2.8 4.5 3.2 4.5 1.5 4.5 3.3-2 3-4.5 3-4.5-1.2-4.5-3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function AndroidAppPromo({ lang }: { lang: string }) {
+  const text = chrome(lang);
+  return (
+    <section className="border-t border-line/80 bg-paper">
+      <div className="mx-auto max-w-5xl px-4 py-12">
+        <div className="rounded-[1.6rem] border border-line bg-white px-6 py-7 shadow-[0_10px_30px_rgba(16,33,28,0.05)] sm:px-8 sm:py-8">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.35fr_0.85fr]">
+            <div>
+              <span className="inline-block rounded-full bg-[#e7f6f1] px-3 py-1 text-[0.72rem] font-bold uppercase tracking-wide text-moss">
+                {text.appBadge}
+              </span>
+              <h2 className="mt-3 text-[1.55rem] font-extrabold leading-tight tracking-tight text-ink">{text.appTitle}</h2>
+              <p className="mt-3 max-w-xl text-sm leading-7 text-ink/60">{text.appBody}</p>
+              <a
+                href={ANDROID_APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#d1d5db] bg-white px-5 py-3 text-sm font-semibold text-ink transition hover:-translate-y-px hover:shadow-md"
+              >
+                <PlayMark />
+                {text.appButton}
+              </a>
+            </div>
+            <ul className="space-y-3.5">
+              {text.appFeatures.map((feature, index) => (
+                <li key={feature} className="flex items-start gap-2.5 text-[0.95rem] leading-6 text-ink">
+                  <span className="mt-0.5 text-moss">
+                    <FeatureIcon index={index} />
+                  </span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function SiteFooter({ c }: { c: Pick<Copy, "lang" | "path" | "legal" | "footerNote"> }) {
   const text = chrome(c.lang);
   const platforms = splitPlatforms(c.lang);
@@ -241,6 +346,8 @@ export function SiteFooter({ c }: { c: Pick<Copy, "lang" | "path" | "legal" | "f
   ];
 
   return (
+    <>
+    <AndroidAppPromo lang={c.lang} />
     <footer className="border-t border-line bg-paper">
       <div className="mx-auto grid max-w-5xl gap-8 px-4 py-10 md:grid-cols-3">
         <div>
@@ -298,5 +405,6 @@ export function SiteFooter({ c }: { c: Pick<Copy, "lang" | "path" | "legal" | "f
         <p className="mx-auto max-w-5xl px-4 py-4 text-xs text-ink/40">© {new Date().getFullYear()} Savemov</p>
       </div>
     </footer>
+    </>
   );
 }

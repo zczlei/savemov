@@ -1,9 +1,13 @@
 export const SITE = "https://savemov.com";
 export const SITE_NAME = "Savemov";
-export const CONTACT_EMAIL = "legal@savemov.com";
+export const CONTACT_EMAIL = "tinaliu660@gmail.com";
 
 /** Same resolver AllVideoDL posts to. One public page URL in, one file URL out. */
 export const DOWNLOAD_API = "https://tool.umebro.com/";
+
+/** Android app listing. Same package AllVideoDL links from the promo card. */
+export const ANDROID_APP_URL =
+  "https://play.google.com/store/apps/details?id=com.yt.videodownloader.allvideodownloader&pcampaignid=web_share";
 
 /** Opens the current page on Savemov with its address already filled in. */
 export const BOOKMARKLET =

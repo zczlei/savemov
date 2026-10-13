@@ -8,7 +8,7 @@ export function legalMetadata(title: string, description: string, path: string):
     title,
     description,
     alternates: { canonical: path },
-    robots: { index: false, follow: true },
+    robots: { index: true, follow: true },
   };
 }
 

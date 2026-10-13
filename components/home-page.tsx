@@ -44,13 +44,7 @@ export default function HomePage({ c }: { c: Copy }) {
             <DownloaderForm copy={c.form} />
           </div>
 
-          <p className="mx-auto mt-4 max-w-2xl text-center text-xs text-white/55">
-            {c.heroHint}{" "}
-            <Link href="/copyright/" className="underline decoration-white/30 underline-offset-2 hover:text-white">
-              {c.legal.copyright}
-            </Link>
-          </p>
-          <div className="mx-auto mt-3 max-w-2xl text-center">
+          <div className="mx-auto mt-4 max-w-2xl text-center">
             <BookmarkletLink lang={c.lang} tone="dark" />
           </div>
 
@@ -184,6 +178,13 @@ export default function HomePage({ c }: { c: Copy }) {
             </div>
           </div>
         </section>
+
+        <p className="mx-auto max-w-3xl px-4 pb-12 text-center text-sm leading-6 text-ink/55">
+          {c.heroHint}{" "}
+          <Link href="/copyright/" className="underline decoration-ink/25 underline-offset-2 hover:text-ink">
+            {c.legal.copyright}
+          </Link>
+        </p>
       </main>
 
       <SiteFooter c={c} />
