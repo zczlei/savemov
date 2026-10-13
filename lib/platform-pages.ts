@@ -1,5 +1,5 @@
 /** English platform pages that share one downloader layout.
- * Twitter, Reddit and Facebook have their own pages and are not listed here. */
+ * Twitter, Reddit, Facebook, TikTok, Instagram and Pinterest have their own pages and are not listed here. */
 
 export type SimplePlatform = {
   slug: string;
@@ -8,16 +8,6 @@ export type SimplePlatform = {
 };
 
 export const SIMPLE_PLATFORMS: SimplePlatform[] = [
-  {
-    slug: "instagram-reels-downloader",
-    name: "Instagram",
-    scope: "Public Reels and video posts. Stories and private accounts stay out of reach.",
-  },
-  {
-    slug: "tiktok-downloader",
-    name: "TikTok",
-    scope: "Public TikTok videos you can open without logging in.",
-  },
   {
     slug: "bluesky-video-downloader",
     name: "Bluesky",
@@ -37,11 +27,6 @@ export const SIMPLE_PLATFORMS: SimplePlatform[] = [
     slug: "okru-video-downloader",
     name: "OK.ru",
     scope: "Public OK.ru videos.",
-  },
-  {
-    slug: "pinterest-video-downloader",
-    name: "Pinterest",
-    scope: "Public video pins.",
   },
   {
     slug: "rutube-video-downloader",
