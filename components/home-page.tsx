@@ -4,6 +4,19 @@ import JsonLd from "@/components/json-ld";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { buildJsonLd, type Copy } from "@/lib/copy";
 
+function RichText({ text, emphasis }: { text: string; emphasis?: string }) {
+  if (!emphasis) return text;
+  const index = text.indexOf(emphasis);
+  if (index < 0) return text;
+  return (
+    <>
+      {text.slice(0, index)}
+      <strong className="font-semibold text-ink">{emphasis}</strong>
+      {text.slice(index + emphasis.length)}
+    </>
+  );
+}
+
 export default function HomePage({ c }: { c: Copy }) {
   const trust = c.trust.split("·").map((item) => item.trim());
   const heroPlatforms = c.platforms.slice(0, 6);
@@ -79,9 +92,29 @@ export default function HomePage({ c }: { c: Copy }) {
           <div className="mx-auto grid max-w-5xl gap-8 px-4 py-14 md:grid-cols-2">
             <div>
               <h2 className="text-2xl font-bold tracking-tight">{c.what.h2}</h2>
-              <p className="mt-4 text-sm leading-7 text-ink/70">{c.what.body}</p>
+              <p className="mt-4 text-sm leading-7 text-ink/70">
+                <RichText text={c.what.body} emphasis={c.what.emphasis} />
+              </p>
             </div>
             <p className="rounded-3xl bg-white p-6 text-sm leading-7 text-ink/70 shadow-sm">{c.what.limits}</p>
+          </div>
+        </section>
+
+        <section className="border-t border-line/80">
+          <div className="mx-auto max-w-5xl px-4 py-14">
+            <h2 className="text-2xl font-bold tracking-tight">{c.platformsH2}</h2>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {c.platforms.map((platform) => (
+                <Link
+                  key={platform.slug}
+                  href={`/${platform.slug}/`}
+                  className="group rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
+                >
+                  <span className="text-ink/40">↗ </span>
+                  <span className="group-hover:text-pine">{platform.anchor}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -104,24 +137,6 @@ export default function HomePage({ c }: { c: Copy }) {
             <div className="rounded-[2rem] bg-pine px-6 py-8 text-white sm:px-10">
               <h2 className="text-2xl font-bold tracking-tight">{c.data.h2}</h2>
               <p className="mt-4 max-w-3xl text-sm leading-7 text-white/75">{c.data.body}</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="border-t border-line/80">
-          <div className="mx-auto max-w-5xl px-4 py-14">
-            <h2 className="text-2xl font-bold tracking-tight">{c.platformsH2}</h2>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {c.platforms.map((platform) => (
-                <Link
-                  key={platform.slug}
-                  href={`/${platform.slug}/`}
-                  className="group rounded-2xl border border-line bg-white px-4 py-4 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-pine/30 hover:shadow-md"
-                >
-                  <span className="text-ink/40">↗ </span>
-                  <span className="group-hover:text-pine">{platform.anchor}</span>
-                </Link>
-              ))}
             </div>
           </div>
         </section>

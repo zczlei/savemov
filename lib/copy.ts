@@ -32,7 +32,7 @@ export type Copy = {
   platformTail: string;
   form: FormCopy;
   how: { h2: string; steps: { t: string; d: string }[] };
-  what: { h2: string; body: string; limits: string };
+  what: { h2: string; body: string; limits: string; emphasis?: string };
   useCases: { h2: string; items: { t: string; d: string }[] };
   data: { h2: string; body: string };
   faqH2: string;
@@ -42,6 +42,9 @@ export type Copy = {
   footerNote: string;
   legal: { terms: string; privacy: string; copyright: string; contact: string };
   skip: string;
+  appName?: string;
+  featureList?: string[];
+  offerNote?: string;
 };
 
 const SLUG = {
@@ -62,79 +65,79 @@ export const EN: Copy = {
   lang: "en",
   ogLocale: "en_US",
   path: "/",
-  title: "Download Video from URL – Free Online Video Downloader | Savemov",
+  title: "Download Video from Link or URL – Free Online Video Downloader",
   desc:
-    "Paste a video URL or link and download it as MP4 for free. No app, no sign-up – " +
-    "works with TikTok, Instagram, Facebook, Pinterest, Telegram and any video link.",
-  h1: "Download Videos from Any URL or Link",
+    "Paste a video link or URL and download it as MP4 for free. No app, no sign-up – " +
+    "works with TikTok, Instagram, Facebook, Telegram and any video page.",
+  h1: "Download Videos from Any Link or URL",
   h2: "Free online video downloader – paste a link, get an MP4 in seconds",
   trust: "No app · No sign-up · MP4 · Free",
   heroHint: "Don't save material you don't have the right to keep.",
   platformLead: "Works with",
   platformTail: "and any public video link",
   form: {
-    label: "Video URL or link",
-    placeholder: "Paste a TikTok, Instagram, Facebook, Telegram or Pinterest link",
+    label: "URL or link to the video",
+    placeholder: "Paste a TikTok, Instagram, Facebook, Pinterest or Telegram link",
     button: "Download MP4",
     paste: "Paste",
     clear: "Clear",
-    steps: ["URL", "Fetch", "Prepare", "Ready"],
-    busy: "Fetching the video from {domain}…",
+    steps: ["Link", "Search", "Prepare", "Ready"],
+    busy: "Finding the video…",
     ready: "Your video is ready.",
-    badUrl: "That doesn't look like a link. Paste the full URL of a public video page (it must start with http:// or https://).",
+    badUrl: "Paste a full public link (starting with http:// or https://).",
     network: "Couldn't reach Savemov. Check your connection and try again.",
-    unsupported:
-      "We couldn't find a downloadable video on that page. Private posts, login-only pages and DRM streams can't be saved.",
+    unsupported: "No video found at that link. Make sure the page is public and try again.",
     ratelimit: "Too many requests — wait a minute and try again.",
-    save: "Download video",
+    save: "Save",
     another: "Download another",
   },
   how: {
     h2: "How to download a video from a link",
     steps: [
-      { t: "Copy the link", d: "Open the public video in your browser and copy its URL — or use the app's Share → Copy link." },
-      { t: "Paste it above", d: "Drop it in the box on this page. We read the page and find the video file behind it." },
+      { t: "Copy the link", d: "Open the public video in your browser and copy its URL – or use Share → Copy link in the app." },
+      { t: "Paste it above", d: "Savemov reads the page and locates the video file that page is streaming." },
       { t: "We fetch the file", d: "Savemov returns the MP4 the page is already playing, at the quality that page published." },
-      { t: "Save the file", d: "Open the download and keep it on your device. Savemov does not store a copy — source links can expire, so save it right away." },
+      { t: "Save the file", d: "One tap and it's on your device. Savemov does not keep a copy, so save it right away." },
     ],
   },
   what: {
     h2: "What this tool does",
+    emphasis: "free video downloader",
     body:
-      "Savemov reads a public page that embeds a playable video, finds the file the page streams, and gives you a copy you can keep — usually an MP4, at the quality the source already published.",
+      "Savemov is a free video downloader for any public link: it reads a page that embeds a playable video, finds the file that page streams, and gives you a copy — the MP4 that page is already playing.",
     limits:
-      "It does not work on login-only pages, private posts, stories you can't open in a browser, or DRM-protected streams. One video per request: a playlist link saves the single item you pasted.",
+      "It does not work on login-only pages, private posts, stories you can't open in a browser, or DRM-protected streams. One video per request: paste a playlist link and you get that single item.",
   },
   useCases: {
     h2: "Common use cases",
     items: [
-      { t: "Keep your own video before you delete it", d: "Backup your TikTok, Reel or Short as an MP4 before you take it down or re-edit it." },
-      { t: "Watch offline", d: "Save a tutorial or a clip you found so it plays on a plane, or on a bad connection." },
-      { t: "Share where the app won't load", d: "Send someone the actual file when their network or device can't open the platform." },
+      { t: "Back up your own video", d: "Save your TikTok, Reel or Short as an MP4 before you delete or re-edit it." },
+      { t: "Watch offline", d: "Keep a tutorial or a clip you found for a flight or a bad connection." },
+      { t: "Send the file, not the link", d: "Hand it to someone whose device or data plan can't open the platform." },
     ],
   },
   data: {
     h2: "How your data is handled",
     body:
-      "The URL you paste is sent to our download service only to locate the file. Savemov does not keep the finished video, and we don't publish or sell the links you paste. The file link comes back immediately — save it to your device, because links from the source can expire.",
+      "The link you paste is used only to locate the file. Savemov does not keep the finished download. We do not publish or sell the URLs you submit, and we do not ask for an account – there is no profile to build from your searches.",
   },
   faqH2: "Frequently asked questions",
   faqs: [
     {
-      q: "How do I download a video from a URL?",
-      a: "Copy the link of the public video page, paste it in the box above, and press Download MP4. Savemov reads the page, locates the video file, and hands you a saved copy in seconds — no app to install and no sign-up.",
+      q: "How do I download a video from a link?",
+      a: "Copy the link of the public video page, paste it in the box above, and press Download MP4. Savemov reads the page, finds the video file behind it, and hands you a saved copy in seconds – no app to install and no sign-up.",
     },
     {
       q: "Can I paste any kind of link?",
-      a: "Yes — the page URL of a public video, a share link, or a link you got in a messaging app such as Telegram. If it opens the video in your browser without a login, we can usually save it. A link that already points straight at an .mp4 file just plays in the browser; use your device's own save option for that one.",
+      a: "Yes: the page URL of a public video, a share link, or a link you received in a messaging app such as Telegram. If the link opens the video in your browser without a login, we can usually save it. A link that already points straight at an .mp4 file just plays in the browser – use your device's own save option for that one.",
     },
     {
       q: "Which sites are supported?",
-      a: "Any public page that embeds a playable video, including TikTok, Instagram Reels, Facebook, Pinterest, Telegram, Snapchat, VK, OK, Dailymotion, Streamable and Loom. Pages that require a login, private posts, and DRM-protected streams are not supported.",
+      a: "Any public page that embeds a playable video, including Pinterest, TikTok, Instagram Reels, Facebook, Telegram, Snapchat, VK, OK, Dailymotion, Streamable and Loom. Pages that require a login, private posts and DRM-protected streams are not supported.",
     },
     {
       q: "Can I download a full playlist?",
-      a: "One video per request. Open the item you want and paste that single link — playlists are not saved as a batch.",
+      a: "One video per request. Open the item you want and paste that single link – playlists are not saved as a batch.",
     },
     {
       q: "Do I need to install an app or create an account?",
@@ -142,49 +145,57 @@ export const EN: Copy = {
     },
     {
       q: "Does it work on iPhone and Android?",
-      a: "Yes. On Android the file lands in your Downloads folder. On iPhone it saves to the Files app (tap Share → Save to Files after the download finishes).",
+      a: "Yes. On Android the file lands in your Downloads folder. On iPhone, tap Share → Save to Files so it leaves the browser and stays on your phone.",
     },
     {
       q: "Is it free? How many videos can I save?",
-      a: "Yes. The tool on this page is free: no card and no account. Each request saves one public video as MP4, at the quality the source page published.",
+      a: "Yes. The downloader on this page is free. Each request saves one public video as MP4, at the quality the source page published.",
     },
     {
       q: "Is it safe? What happens to the link I paste?",
-      a: "Your link is used only to fetch the file. Savemov does not keep a copy, and we don't publish or sell the URLs you paste. See “How your data is handled” below.",
+      a: "Your link is used only to fetch the file – it is not published or sold. Savemov does not keep a copy of the finished download. Details are in “How your data is handled” below.",
     },
     {
       q: "Can I download videos that belong to someone else?",
-      a: "Save only what you have the right to keep: your own uploads, material you were given permission for, or where your local law allows a private copy. Don't redistribute other people's copyrighted work. See our Copyright policy.",
+      a: "Save only what you have the right to keep: your own uploads, material you were given permission for, or where your local law allows a private copy. Don't redistribute other people's copyrighted work – see our Copyright policy.",
     },
     {
       q: "Can I download WhatsApp status videos?",
-      a: "No. WhatsApp Status has no public link a website can read, so no online downloader — including this one — can fetch it. Anything that does give you a public link (Telegram, TikTok, Instagram, X) works above.",
+      a: "No. WhatsApp Status has no public link a website can read, so no online downloader – including this one – can save it. Anything that does give you a public link (TikTok, Instagram, Facebook, Telegram, Pinterest) works above.",
     },
   ],
   platformsH2: "Video downloaders by platform",
   platforms: [
-    { slug: SLUG.tg, label: "Telegram", anchor: "Telegram video downloader" },
-    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok downloader" },
-    { slug: SLUG.fb, label: "Facebook", anchor: "Facebook video downloader" },
-    { slug: SLUG.ig, label: "Instagram Reels", anchor: "Instagram Reels downloader" },
-    { slug: SLUG.vk, label: "VK", anchor: "VK video downloader" },
-    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest video downloader" },
-    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat video downloader" },
-    { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru video downloader" },
-    { slug: SLUG.dm, label: "Dailymotion", anchor: "Dailymotion video downloader" },
-    { slug: SLUG.lo, label: "Loom", anchor: "Loom video downloader" },
-    { slug: SLUG.st, label: "Streamable", anchor: "Streamable video downloader" },
+    { slug: SLUG.pi, label: "Pinterest", anchor: "Pinterest Video Downloader" },
+    { slug: SLUG.tt, label: "TikTok", anchor: "TikTok Downloader" },
+    { slug: SLUG.ig, label: "Instagram", anchor: "Instagram Reels Downloader" },
+    { slug: SLUG.fb, label: "Facebook", anchor: "Facebook Video Downloader" },
+    { slug: SLUG.tg, label: "Telegram", anchor: "Telegram Video Downloader" },
+    { slug: SLUG.sn, label: "Snapchat", anchor: "Snapchat Video Downloader" },
+    { slug: SLUG.st, label: "Streamable", anchor: "Streamable Video Downloader" },
+    { slug: SLUG.vk, label: "VK", anchor: "VK Video Downloader" },
+    { slug: SLUG.ok, label: "OK.ru", anchor: "OK.ru Video Downloader" },
+    { slug: SLUG.dm, label: "Dailymotion", anchor: "Dailymotion Video Downloader" },
+    { slug: SLUG.lo, label: "Loom", anchor: "Loom Recording Downloader" },
   ],
-  footerNote: "Save only videos you have the right to keep.",
-  legal: { terms: "Terms", privacy: "Privacy", copyright: "Copyright / DMCA", contact: "Contact" },
+  footerNote: "Online video downloader.",
+  legal: { terms: "Terms", privacy: "Privacy", copyright: "Copyright", contact: "Contact" },
   skip: "Skip to content",
+  appName: "Savemov – Online Video Downloader",
+  featureList: [
+    "Download video from link or URL",
+    "MP4 output",
+    "No app, no sign-up",
+    "Works on Android and iPhone",
+  ],
+  offerNote: "Free",
 };
 
 export const PT: Copy = {
   lang: "pt",
   ogLocale: "pt_BR",
   path: "/pt/",
-  title: "Baixar Vídeos Online pela URL ou Link – Grátis | Savemov",
+  title: "Baixar Vídeo pela URL ou Link – Vídeos Online Grátis sem App",
   desc:
     "Baixe vídeos pela URL ou por link em MP4, grátis e sem aplicativo. Funciona com " +
     "TikTok, Instagram, Facebook, Telegram e qualquer link público de vídeo.",
@@ -380,7 +391,7 @@ export const ES: Copy = {
     },
     {
       q: "¿Es gratis? ¿Cuántos videos puedo descargar?",
-      a: "Sí, sin tarjeta y sin cuenta. Cada solicitud guarda un video público en MP4.",
+      a: "Sí. La herramienta de esta página es gratis. Cada solicitud guarda un video público en MP4.",
     },
     {
       q: "¿Puedo descargar una playlist completa?",
@@ -443,7 +454,7 @@ export function buildMetadata(c: Copy): Metadata {
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: c.h1 }],
     },
     twitter: { card: "summary_large_image", title: c.title, description: c.desc, images: ["/opengraph-image"] },
-    robots: { index: true, follow: true },
+    robots: { index: true, follow: true, maxSnippet: -1, maxImagePreview: "large" },
   };
 }
 
@@ -452,15 +463,17 @@ export function buildJsonLd(c: Copy) {
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      name: "Savemov – " + c.h1,
+      name: c.appName ?? "Savemov – " + c.h1,
       url: SITE + (c.path === "/" ? "/" : c.path),
       description: c.desc,
       applicationCategory: "UtilityApplication",
       operatingSystem: "Any (web browser)",
       inLanguage: c.lang,
       isAccessibleForFree: true,
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-      featureList: [c.h1, "MP4", c.trust],
+      ...(c.offerNote
+        ? { hasPart: { "@type": "Offer", price: "0", priceCurrency: "USD", description: c.offerNote } }
+        : { offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }),
+      featureList: c.featureList ?? [c.h1, "MP4", c.trust],
     },
     {
       "@context": "https://schema.org",

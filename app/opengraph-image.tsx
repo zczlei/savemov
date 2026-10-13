@@ -40,7 +40,7 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <div style={{ fontSize: 68, fontWeight: 800, letterSpacing: -1.5, lineHeight: 1.05, maxWidth: 900 }}>
-            Download videos from any URL or link
+            Download Video from Link or URL
           </div>
           <div style={{ fontSize: 28, color: "rgba(255,255,255,0.75)" }}>Free online video downloader · MP4 · No app</div>
         </div>
